@@ -1,6 +1,5 @@
 ## code to prepare `DATASET` dataset goes here
 
-
 pref_names <- c(
   "北海道",
   "青森県",
@@ -51,4 +50,10 @@ pref_names <- c(
   "沖縄県"
 )
 
-usethis::use_data(DATASET, overwrite = TRUE)
+
+devtools::load_all()
+prefecture_medical_treatment <- ingest()
+write_files(prefecture_medical_treatment, "data-raw/prefecture_medical_treatment/")
+
+usethis::use_data(pref_names, compress = "gzip", internal = TRUE, overwrite = TRUE)
+usethis::use_data(prefecture_medical_treatment, compress = "gzip", overwrite = TRUE)

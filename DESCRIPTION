@@ -2,11 +2,9 @@ Package: covid19jp
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "kj-9",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "46800811+kj-9@users.noreply.github.com")
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
@@ -15,4 +13,11 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat
+    testthat,
+    purrr,
+    dplyr,
+    readr,
+    jsonlite,
+    log4r
+Depends: 
+    R (>= 2.10)
