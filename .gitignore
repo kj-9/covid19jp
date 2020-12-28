@@ -1,1 +1,8 @@
 .Rproj.user
+*.rda
+
+.*history
+.local
+.rstudio
+.config
+.cache
