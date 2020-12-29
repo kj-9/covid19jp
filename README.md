@@ -6,12 +6,12 @@ This is R package provides ready to use Japanese covid-19 datasets.
 
 - `japan_daily`: Daily naition-level data for Japanese covid-19 situation.
 - `pref_daily`: Daily prefecture-level data for Japanese covid-19 situation.
-- `pref_weekly`: Weekly prefecture-level data for Japanese covid-19 situation (contains some additional data like hospital capacity not appear in `prefecture_daily`).
+- `pref_weekly`: Weekly prefecture-level data for Japanese covid-19 situation (contains some additional data like hospital capacity not appear in `pref_daily`).
 - `pref`: Helper master data for Japanese prefectures.
 
 These datasets originally from Japanese MHLW website. MHLW releases their covid-19 data in poor format which requires a lot of data cleaning before analyzing it. So I made this.
 
-For `japan_daily` and `prefecture_daily`, Huge thanks to Kazuki OGIWARA's [repo](https://github.com/kaz-ogiwara/covid19). They did most of the data cleaning!
+For `japan_daily` and `pref_daily`, Huge thanks to Kazuki OGIWARA's [repo](https://github.com/kaz-ogiwara/covid19). They did most of the data cleaning!
 
 ### For people not using R
 
@@ -55,7 +55,7 @@ json: `data-raw/dist/jp_daily.json`
 
 #### Data Source
 
-- reshaped from [prefectures.csv](https://github.com/kaz-ogiwara/covid19/blob/master/data/prefectures.csv) from [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
+- [prefectures.csv](https://github.com/kaz-ogiwara/covid19/blob/master/data/prefectures.csv) from [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
 - Originaly from Japanese MHLW website. See above link to github repo.
 
 ### `pref_daily`
@@ -80,7 +80,7 @@ json: `data-raw/dist/jp_daily.json`
 
 #### Data Source
 
-- reshaped from [prefectures.csv](https://github.com/kaz-ogiwara/covid19/blob/master/data/prefectures.csv) from [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
+- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
 - Originaly from Japanese MHLW website. See above link to github repo.
 
 ### `pref_weekly`
