@@ -1,7 +1,7 @@
 library(dplyr)
-library(readr)
 library(purrr)
-devtools::load_all()
+
+utils <- modules::use("data-raw/utils.R")
 
 base_url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/"
 files <- c(
@@ -16,7 +16,7 @@ files <- c(
 
 jp_daily <- map(
   files,
-  ~ read_csv(paste0(base_url, .x),
+  ~ readr::read_csv(paste0(base_url, .x),
     skip = 1,
     col_names = c("date", .x),
     col_types = list(col_date("%Y/%m/%d"), col_double())
@@ -35,6 +35,5 @@ jp_daily <- map(
   ) %>%
   arrange(date)
 
-write_files(jp_daily, "data-raw/dist")
+utils$write_files(jp_daily, "data-raw/dist")
 usethis::use_data(jp_daily, compress = "xz", overwrite = TRUE)
-

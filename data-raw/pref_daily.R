@@ -1,10 +1,8 @@
-library(readr)
 library(dplyr)
-devtools::load_all()
-
+utils = modules::use("data-raw/utils.R")
 
 url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/prefectures.csv"
-pref_daily <- read_csv(url, na = "-") %>%
+pref_daily <- readr::read_csv(url, na = "-") %>%
   left_join(pref, by = c("prefectureNameJ" = "prefJP")) %>%
   transmute(
     prefCode,
@@ -22,6 +20,6 @@ pref_daily <- read_csv(url, na = "-") %>%
   arrange(prefCode, date)
 
 
-write_files(pref_daily, "data-raw/dist")
+utils$write_files(pref_daily, "data-raw/dist")
 
 usethis::use_data(pref_daily, compress = "xz", overwrite = TRUE)
