@@ -1,6 +1,7 @@
 library(dplyr)
 library(purrr)
-
+library(readr)
+load("data/pref.rda") # load pref dataset
 utils <- modules::use("data-raw/utils.R")
 
 base_url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/"
@@ -16,7 +17,7 @@ files <- c(
 
 jp_daily <- map(
   files,
-  ~ readr::read_csv(paste0(base_url, .x),
+  ~ read_csv(paste0(base_url, .x),
     skip = 1,
     col_names = c("date", .x),
     col_types = list(col_date("%Y/%m/%d"), col_double())

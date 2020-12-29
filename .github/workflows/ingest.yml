@@ -1,0 +1,30 @@
+name: ingest
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *" # UTC
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: R:Run
+        run: docker run --entrypoint 'Rscript' --workdir /home/rstudio -v $(pwd):/home/rstudio ghcr.io/kj-9/r-java:latest data-raw/execute.R
+      - name: Count updated files
+        run: |
+          echo "NUM_UPDATED_FILES=$(git diff --name-only | wc -l)" >> $GITHUB_ENV
+          echo "number of updated files: $NUM_UPDATED_FILES"
+      - name: Commit updated files
+        if: ${{ env.NUM_UPDATED_FILES > 0 }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Automatic data update" -a
+      - name: Push changes
+        if: ${{ env.NUM_UPDATED_FILES > 0 }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
