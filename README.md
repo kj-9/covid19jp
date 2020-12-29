@@ -67,6 +67,7 @@ json: `data-raw/dist/jp_daily.json`
 
 | name        | description                    | description in Japanese        |
 | :---------- | :----------------------------- | :----------------------------- |
+| prefCode    | prefecture code                | 都道府県番号                   |
 | prefJP      | A prefecture name in Japanese  | 都道府県名(日本語)             |
 | prefEN      | A prefecture name in English   | 都道府県名(英語)               |
 | date        | Date in JST                    | 日本時間での日付               |
@@ -94,6 +95,7 @@ json: `data-raw/dist/pref_daily.json`
 
 | name                        | description                                                                   | description in Japanese                        |
 | :-------------------------- | :---------------------------------------------------------------------------- | :--------------------------------------------- |
+| prefCode                    | prefecture code                                                               | 都道府県番号                                   |
 | prefJP                      | Name of the prefecture in Japanese                                            | 都道府県名(日本語)                             |
 | prefEN                      | Name of the prefecture in English                                             | 都道府県名(英語)                               |
 | date                        | Date in JST                                                                   | 日本時間での日付                               |
