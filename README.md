@@ -60,8 +60,8 @@ json: `data-raw/dist/jp_daily.json`
 
 ### `pref_daily`
 
-csv: `data-raw/dist/jp_daily.csv`
-json: `data-raw/dist/jp_daily.json`
+csv: `data-raw/dist/pref_daily.csv`
+json: `data-raw/dist/pref_daily.json`
 
 #### Columns
 
@@ -88,8 +88,8 @@ json: `data-raw/dist/jp_daily.json`
 
 Currently, only dataset after 2020-09-02 is available.
 
-csv: `data-raw/dist/pref_daily.csv`
-json: `data-raw/dist/pref_daily.json`
+csv: `data-raw/dist/pref_weekly.csv`
+json: `data-raw/dist/pref_weekly.json`
 
 #### Columns
 
