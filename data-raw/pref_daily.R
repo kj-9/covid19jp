@@ -24,4 +24,4 @@ pref_daily <- read_csv(url, na = "-") %>%
 
 write_files(pref_daily, "data-raw/dist")
 
-usethis::use_data(pref_daily, compress = "gzip", overwrite = TRUE)
+usethis::use_data(pref_daily, compress = "xz", overwrite = TRUE)

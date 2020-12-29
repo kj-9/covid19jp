@@ -36,4 +36,5 @@ jp_daily <- map(
   arrange(date)
 
 write_files(jp_daily, "data-raw/dist")
-usethis::use_data(jp_daily, compress = "gzip", overwrite = TRUE)
+usethis::use_data(jp_daily, compress = "xz", overwrite = TRUE)
+
