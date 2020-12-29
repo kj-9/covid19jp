@@ -1,3 +1,9 @@
 ^covid19jp\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
+^LICENSE\.md$
+^\..+history$
+^\.cache$
+^\.config$
+^\.local$
+^\.rstudio$
