@@ -1,13 +1,14 @@
 Package: covid19jp
-Title: What the Package Does (One Line, Title Case)
+Title: Japanese covid-19 Datasets
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "kj-9",
            role = c("aut", "cre"),
            email = "46800811+kj-9@users.noreply.github.com")
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: Ready to use Japanese covid-19 datasets.
+License: MIT + file LICENSE
+URL: https://github.com/kj-9/covid19jp
+BugReports: https://github.com/kj-9/covid19jp/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
