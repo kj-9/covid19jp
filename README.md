@@ -4,24 +4,25 @@
 
 This is R package provides ready to use Japanese covid-19 datasets.
 
-- `japan_daily`: Daily naition-level data for Japanese covid-19 situation
-- `pref_daily`: Daily prefecture-level data for Japanese covid-19 situation
-- `pref_weekly`: Weekly prefecture-level data for Japanese covid-19 situation (contains some additional data like hospital capacity not appear in `prefecture_daily`)
-- `pref`: Helper master data for Japanese prefectures
+- `japan_daily`: Daily naition-level data for Japanese covid-19 situation.
+- `pref_daily`: Daily prefecture-level data for Japanese covid-19 situation.
+- `pref_weekly`: Weekly prefecture-level data for Japanese covid-19 situation (contains some additional data like hospital capacity not appear in `prefecture_daily`).
+- `pref`: Helper master data for Japanese prefectures.
 
-Sources for these datasets are the Japanese MHLW website. But MHLW releases their covid-19 data in poor format which requires a lot of data cleaning work before analyzing it.
-So I made this.
+These datasets originally from Japanese MHLW website. MHLW releases their covid-19 data in poor format which requires a lot of data cleaning before analyzing it. So I made this.
 
 For `japan_daily` and `prefecture_daily`, Huge thanks to Kazuki OGIWARA's [repo](https://github.com/kaz-ogiwara/covid19). They did most of the data cleaning!
 
 ### For people not using R
 
-csv/json format files are also available under data-raw/dist. see also `Dataset detail` below.
+CSV/JSON format files are also available under `data-raw/dist`. see also `Dataset detail` below.
 
-### Caution
+### Note
 
+- This repo is still under frequent development. data interfaces can be changed.
 - This repo updates datasets daily, but your installed R package will not. please re-install this package (probably I'll add some R functions to update dataset without re-installation)
 - Due to change of data source format, updating datasets may be delayed.
+- I'm happy to see your feedback! Please create issues for that.
 
 ## Installation
 
