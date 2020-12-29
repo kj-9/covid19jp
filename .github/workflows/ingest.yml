@@ -16,6 +16,8 @@ jobs:
         run: |
           echo "NUM_UPDATED_FILES=$(git diff --name-only | wc -l)" >> $GITHUB_ENV
           echo "number of updated files: $NUM_UPDATED_FILES"
+      - name: Update DATA_HASH
+        run: ls -alR --full-time data/ | sha1sum > inst/DATA_HASH
       - name: Commit updated files
         if: ${{ env.NUM_UPDATED_FILES > 0 }}
         run: |
