@@ -41,8 +41,12 @@ check_pref_names <- function(df, pref_column) {
 }
 
 write_files <- function(df, path) {
-  readr::write_csv(df, paste0(path, "file.csv"))
-  jsonlite::write_json(df, paste0(path, "file.json"))
+  df_sym <- rlang::ensym(df)
+  paths <-
+    paste0(file.path(path, df_sym), c(".csv", ".json"))
+
+  readr::write_csv(df, paths[1])
+  jsonlite::write_json(df, paths[2])
 }
 
 info <- function(message) {
