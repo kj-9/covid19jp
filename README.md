@@ -13,16 +13,17 @@ These datasets originally from Japanese MHLW website. MHLW releases their covid-
 
 For `japan_daily` and `pref_daily`, Huge thanks to Kazuki OGIWARA's [repo](https://github.com/kaz-ogiwara/covid19). They did most of the data cleaning!
 
+I created `update_data` function heavily referring to [coronavirus](https://github.com/RamiKrispin/coronavirus) package. Thanks!
+
 ### For people not using R
 
 CSV/JSON format files are also available under `data-raw/dist`. see also `Dataset detail` below.
 
 ### Note
 
-- This repo is still under frequent development. data interfaces can be changed.
-- This repo updates datasets daily, but your installed R package will not. please re-install this package (probably I'll add some R functions to update dataset without re-installation)
+- This repo is still under frequent development. data schema and interfaces can be changed.
 - Due to change of data source format, updating datasets may be delayed.
-- I'm happy to see your feedback! Please create issues for that.
+- I'm happy to receive your feedback! Please create issues for feedback.
 
 ## Installation
 
@@ -31,6 +32,16 @@ Currently, this package is not on CRAN. Please install from this github repo.
 ```r
 # Install the development version from GitHub
 devtools::install_github("kj-9/covid19jp", ref = "master")
+```
+
+## Update datasets
+
+This GitHub repo updates datasets daily, but your installed R package will not.
+To update datasets, use `update_date`.
+
+```r
+library(covid19jp)
+update_data()
 ```
 
 ## Dataset detail
