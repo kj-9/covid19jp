@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v2
       - name: R:Run
         run: docker run --entrypoint 'Rscript' --workdir /home/rstudio -v $(pwd):/home/rstudio ghcr.io/kj-9/r-java:latest data-raw/execute.R
+      - name: update DATA_HASH
+        run: ls -alR --full-time data/ | sha1sum > inst/DATA_HASH
       - name: Count updated files
         run: |
           echo "NUM_UPDATED_FILES=$(git diff --name-only | wc -l)" >> $GITHUB_ENV
           echo "number of updated files: $NUM_UPDATED_FILES"
-      - name: Update DATA_HASH
-        run: ls -alR --full-time data/ | sha1sum > inst/DATA_HASH
-      - name: Commit updated files
+      - name: Commit all updated files
         if: ${{ env.NUM_UPDATED_FILES > 0 }}
         run: |
           git config --local user.email "action@github.com"
