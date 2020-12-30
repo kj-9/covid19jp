@@ -125,3 +125,20 @@ json: `data-raw/dist/pref_weekly.json`
 #### Data Source
 
 - Japanese MHLW website: https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html
+
+### `pref`
+
+csv: `data-raw/dist/pref.csv`
+
+#### Columns
+
+| name       | description                   | description in Japanese |
+| :--------- | :---------------------------- | :---------------------- |
+| prefCode   | prefecture code               | 都道府県番号            |
+| prefJP     | A prefecture name in Japanese | 都道府県名(日本語)      |
+| prefEN     | A prefecture name in English  | 都道府県名(英語)        |
+| population | estimated population in 2018  | 2018 年推計人口         |
+
+#### Data Source
+
+- estimated population: https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
