@@ -119,7 +119,7 @@ ingest <- function() {
       clean())) %>%
     tidyr::unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
-    select(prefCode, prefJP, prefEN, everything(), -url, -fileName) %>%
+    select(prefCode, prefJP, prefEN, everything(), -url, -fileName, -population) %>%
     arrange(prefCode, date)
 
 
