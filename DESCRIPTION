@@ -1,5 +1,5 @@
 Package: covid19jp
-Title: Japanese covid-19 datasets
+Title: Japanese Covid-19 Datasets
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "kj-9",

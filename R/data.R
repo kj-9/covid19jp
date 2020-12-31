@@ -1,4 +1,4 @@
-#' covid19jp: Japanese covid-19 datasets
+#' covid19jp: Japanese Covid-19 Datasets
 #'
 #' The covid19jp package provides ready to use Japanese covid-19 datasets. More
 #' details are available
