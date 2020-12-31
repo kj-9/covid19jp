@@ -1,21 +1,22 @@
 #' Update the covid19jp datasets
-#' @param force A logical value, False by default. if set to TRUE, install updates without prompt question
-#' @description  Update the package datasets on the global environment with the most recent data on the Dev version
-#' @details As the CRAN version is being updated every one-two months, the dev version of the package is being updated on a daily bases.
-#' This function enables to refresh the package dataset to the most up-to-date data. Changes will be available on the global environment
-#' @return A data.frame object
-#' @source \href{https://github.com/kj-9/covid19jp}{website}
+#' @param force A logical value, False by default. if set to TRUE, install
+#'   updates without prompt question
+#' @description  Update the package datasets on the global environment with the
+#'   most recent data on the Dev version.
+#' @details As the CRAN version is being updated every one-two months, the dev
+#'   version of the package is being updated on a daily bases. This function
+#'   enables to refresh the package dataset to the most up-to-date data. Changes
+#'   will be available on the global environment.
 #' @export update_data
-#'
 #' @examples
-#'\dontrun{
+#' \dontrun{
 #' # update with a question prompt
 #' update_data(force = FALSE)
 #'
 #' # update without a question prompt
 #' update_data(force = TRUE)
 #' }
-
+#'
 update_data <- function(force = FALSE) {
   hash_current <- readLines(system.file("DATA_HASH", package = "covid19jp"))
   hash_latest <- readLines("https://raw.githubusercontent.com/kj-9/covid19jp/master/inst/DATA_HASH")

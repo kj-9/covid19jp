@@ -1,8 +1,8 @@
 # covid19jp
 
-## R package for Japanese covid-19 Datasets
+## An R package for Japanese covid-19 datasets
 
-This is R package provides ready to use Japanese covid-19 datasets.
+The covid19jp package provides ready to use Japanese covid-19 datasets.
 
 - `japan_daily`: Daily naition-level data for Japanese covid-19 situation.
 - `pref_daily`: Daily prefecture-level data for Japanese covid-19 situation.
