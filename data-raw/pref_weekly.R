@@ -27,9 +27,15 @@ get_list <- function() {
   link_text <- res_nodes %>%
     rvest::html_text()
 
-  out <- tibble(url = url_data, fileName = link_text)
-
-  return(out)
+  out <- tibble(url = url_data, fileName = link_text) %>%
+    mutate(
+      date = fileName %>% stringi::stri_trans_nfkc() %>%
+        stringr::str_extract("[0-9]{1,2}月[0-9]{1,2}日") %>% # need to change for CRAN
+        paste0("2020-", .) %>% # This will break next year!
+        readr::parse_date(format = "%Y-%m月%d日") %>%
+        as.Date()
+    ) %>%
+    return(out)
 }
 
 
@@ -93,24 +99,22 @@ clean <- function(df) {
   return(out)
 }
 
+udf_list <-
+tibble(
+  url = "https://www.mhlw.go.jp/content/10900000/000712272.pdf",
+  fileName = "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（12月23日０時時点）",
+  date = as.Date("2020-12-23")
+)
+
 
 ingest <- function() {
   utils$info("start job ingest::medical_treatment")
 
   # get list of pdf files
-  url_list <- get_list()
-
-  # ingest
-  url_list <- url_list %>%
-    mutate(
-      date = fileName %>% stringi::stri_trans_nfkc() %>%
-        stringr::str_extract("[0-9]{1,2}月[0-9]{1,2}日") %>% # need to change for CRAN
-        paste0("2020-", .) %>% # This will break next year!
-        readr::parse_date(format = "%Y-%m月%d日") %>%
-        as.Date()
-    ) %>%
+  url_list <- get_list() %>%
     # currently, this function only support data after 2020-09-02.
     filter(date >= "2020-09-02") %>%
+    rbind(udf_list) %>%
     arrange(date)
 
   df <- url_list %>%
