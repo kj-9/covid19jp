@@ -1,5 +1,7 @@
  <!-- badges: start -->
-  [![R build status](https://github.com/kj-9/covid19jp/workflows/R-CMD-check/badge.svg)](https://github.com/kj-9/covid19jp/actions)
+
+[![R build status](https://github.com/kj-9/covid19jp/workflows/R-CMD-check/badge.svg)](https://github.com/kj-9/covid19jp/actions)
+
   <!-- badges: end -->
 
 # covid19jp
@@ -156,4 +158,4 @@ csv: `data-raw/dist/pref.csv`
 
 #### Data Source
 
-- estimated population: https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
+- Statistics Bureau of Japane (xlsx file): https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
