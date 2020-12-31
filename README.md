@@ -1,3 +1,7 @@
+ <!-- badges: start -->
+  [![R build status](https://github.com/kj-9/covid19jp/workflows/R-CMD-check/badge.svg)](https://github.com/kj-9/covid19jp/actions)
+  <!-- badges: end -->
+
 # covid19jp
 
 ## An R package for Japanese covid-19 datasets
