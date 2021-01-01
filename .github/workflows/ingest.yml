@@ -13,7 +13,7 @@ jobs:
       - name: R:Run
         run: docker run --entrypoint 'Rscript' --workdir /home/rstudio -v $(pwd):/home/rstudio ghcr.io/kj-9/r-java:latest data-raw/execute.R
       - name: update DATA_HASH
-        run: ls -alR --full-time data/ | sha1sum > inst/DATA_HASH
+        run: find data/ -type f -print0 | sort -z | xargs -0 sha1sum | sort | sha1sum > inst/DATA_HASH
       - name: Count updated files
         run: |
           echo "NUM_UPDATED_FILES=$(git diff --name-only | wc -l)" >> $GITHUB_ENV
