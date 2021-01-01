@@ -2,7 +2,7 @@ name: ingest
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 9 * * *" # UTC
+    - cron: "0 */3 * * *" # UTC
 
 jobs:
   ingest:
