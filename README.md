@@ -4,9 +4,7 @@
 
   <!-- badges: end -->
 
-# covid19jp
-
-## An R package for Japanese Covid-19 Datasets
+# covid19jp : R package for Japanese Covid-19 Datasets
 
 The covid19jp package provides ready to use Japanese covid-19 datasets.
 
