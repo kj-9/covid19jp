@@ -84,9 +84,9 @@ json: `data-raw/dist/pref_daily.json`
 
 | name        | description                    | description in Japanese        |
 | :---------- | :----------------------------- | :----------------------------- |
-| prefCode    | prefecture code                | 都道府県番号                   |
-| prefJP      | A prefecture name in Japanese  | 都道府県名(日本語)             |
-| prefEN      | A prefecture name in English   | 都道府県名(英語)               |
+| prefCode    | Prefecture code                | 都道府県番号                   |
+| prefJP      | Prefecture name in Japanese    | 都道府県名(日本語)             |
+| prefEN      | Prefecture name in English     | 都道府県名(英語)               |
 | date        | Date in JST                    | 日本時間での日付               |
 | tests       | Number of tests                | PCR 検査実施人数               |
 | newCases    | Number of new cases            | 陽性者数                       |
@@ -151,10 +151,10 @@ csv: `data-raw/dist/pref.csv`
 
 | name       | description                                  | description in Japanese |
 | :--------- | :------------------------------------------- | :---------------------- |
-| prefCode   | prefecture code                              | 都道府県番号            |
-| prefJP     | A prefecture name in Japanese                | 都道府県名(日本語)      |
-| prefEN     | A prefecture name in English                 | 都道府県名(英語)        |
-| population | An estimated population in thousands in 2018 | 2018 年推計人口(千人)   |
+| prefCode   | Prefecture code                              | 都道府県番号            |
+| prefJP     | Prefecture name in Japanese                  | 都道府県名(日本語)      |
+| prefEN     | Prefecture name in English                   | 都道府県名(英語)        |
+| population | Population estimate in thousands in 2018     | 2018 年推計人口(千人)   |
 
 #### Data Source
 
