@@ -13,6 +13,12 @@ This package provides ready to use Japanese covid-19 datasets.
 - `pref_weekly`: Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `pref_daily`).
 - `pref`: Master dataset for Japanese prefectures.
 
+### Notes
+
+- CSV/JSON format files are also available [here](https://github.com/kj-9/covid19jp/tree/master/data-raw/dist). See also `Dataset detail` below.
+
+- Due to the data source format changes, updating datasets in development version maight delay.
+
 ## Installation
 
 ```r
@@ -29,12 +35,6 @@ We update datasets in devolpment version daily. To get latest datasets, run `upd
 # update your datasets
 covid19jp::update_data()
 ```
-
-### Notes
-
-- CSV/JSON format files are also available [here](https://github.com/kj-9/covid19jp/tree/master/data-raw/dist). See also `Dataset detail` below.
-
-- Due to the data source format changes, updating datasets in development version maight delay.
 
 ## Dataset detail
 
@@ -122,12 +122,12 @@ Currently, only dataset after 2020-09-02 is available.
 
 #### Columns
 
-| name       | description                                  | description in Japanese |
-| :--------- | :------------------------------------------- | :---------------------- |
-| prefCode   | Prefecture code                              | 都道府県番号            |
-| prefJP     | Prefecture name in Japanese                  | 都道府県名(日本語)      |
-| prefEN     | Prefecture name in English                   | 都道府県名(英語)        |
-| population | Population estimate in thousands in 2018     | 2018 年推計人口(千人)   |
+| name       | description                              | description in Japanese |
+| :--------- | :--------------------------------------- | :---------------------- |
+| prefCode   | Prefecture code                          | 都道府県番号            |
+| prefJP     | Prefecture name in Japanese              | 都道府県名(日本語)      |
+| prefEN     | Prefecture name in English               | 都道府県名(英語)        |
+| population | Population estimate in thousands in 2018 | 2018 年推計人口(千人)   |
 
 #### Data Source
 
