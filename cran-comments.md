@@ -4,6 +4,7 @@
 - ubuntu 20.04 (on github actions) R devel, 4.0.3
 - mac OS 10.15.7 (on github actions) R 4.0.3
 - Microsoft Windows Server 2019 10.0.17763 (on github actions) R 4.0.3
+- win-builder (devel)
 
 ## R CMD check results
 
