@@ -12,13 +12,13 @@ updates without prompt question}
 }
 \description{
 Update the package datasets on the global environment with the
-most recent data on the Dev version.
+most recent data on the development version.
 }
 \details{
-As the CRAN version is being updated every one-two months, the dev
-version of the package is being updated on a daily bases. This function
-enables to refresh the package dataset to the most up-to-date data. Changes
-will be available on the global environment.
+As the CRAN version is being updated every one-two months, the
+development version of the package is being updated on a daily bases. This
+function enables to refresh the package dataset to the most up-to-date
+data. Changes will be available on the global environment.
 }
 \examples{
 \dontrun{
