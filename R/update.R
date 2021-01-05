@@ -1,5 +1,5 @@
 #' Update the covid19jp datasets
-#' @param force A logical value, False by default. if set to TRUE, install
+#' @param force A logical value. FALSE by default. if set to TRUE, install
 #'   updates without prompt question
 #' @description  Update the package datasets on the global environment with the
 #'   most recent data on the Dev version.
