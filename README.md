@@ -42,16 +42,16 @@ covid19jp::update_data()
 
 #### Columns
 
-| name        | description                    | description in Japanese        |
-| :---------- | :----------------------------- | :----------------------------- |
-| date        | Date in JST                    | 日本時間での日付               |
-| tests       | Number of tests                | PCR 検査実施人数               |
-| newCases    | Number of new cases            | 陽性者数                       |
-| activeCases | Number of current active cases | 入院治療等を要する者の数       |
-| severeCases | Number of current severe cases | 重症者数                       |
-| recovered   | Number of recovered cases      | 退院又は療養解除となった者の数 |
-| deaths      | Number of tests                | 死亡者数                       |
-| rt          | Effective reproduction number  | 実効再生産数                   |
+| name        | description                     | description in Japanese                |
+| :---------- | :------------------------------ | :------------------------------------- |
+| date        | Date in JST                     | 日本時間での日付                       |
+| tests       | Number of tests                 | PCR 検査実施人数                       |
+| newCases    | Number of new cases             | 陽性者数                               |
+| activeCases | Number of current active cases  | 入院治療等を要する者の数               |
+| severeCases | Number of current severe cases  | 重症者数                               |
+| recovered   | Total number of recovered cases | 退院又は療養解除となった者の数（累積） |
+| deaths      | Total number of deaths          | 死亡者数（累積）                       |
+| rt          | Effective reproduction number   | 実効再生産数                           |
 
 #### Data Source
 
@@ -61,19 +61,19 @@ covid19jp::update_data()
 
 #### Columns
 
-| name        | description                    | description in Japanese        |
-| :---------- | :----------------------------- | :----------------------------- |
-| prefCode    | Prefecture code                | 都道府県番号                   |
-| prefJP      | Prefecture name in Japanese    | 都道府県名(日本語)             |
-| prefEN      | Prefecture name in English     | 都道府県名(英語)               |
-| date        | Date in JST                    | 日本時間での日付               |
-| tests       | Number of tests                | PCR 検査実施人数               |
-| newCases    | Number of new cases            | 陽性者数                       |
-| activeCases | Number of current active cases | 入院治療等を要する者の数       |
-| severeCases | Number of current severe cases | 重症者数                       |
-| recovered   | Number of recovered cases      | 退院又は療養解除となった者の数 |
-| deaths      | Number of tests                | 死亡者数                       |
-| rt          | Effective reproduction number  | 実効再生産数                   |
+| name        | description                     | description in Japanese                |
+| :---------- | :------------------------------ | :------------------------------------- |
+| prefCode    | Prefecture code                 | 都道府県番号                           |
+| prefJP      | Prefecture name in Japanese     | 都道府県名(日本語)                     |
+| prefEN      | Prefecture name in English      | 都道府県名(英語)                       |
+| date        | Date in JST                     | 日本時間での日付                       |
+| tests       | Total number of tests           | PCR 検査実施人数 （累積）              |
+| newCases    | Total number of new cases       | 陽性者数（累積）                       |
+| activeCases | Number of current active cases  | 入院治療等を要する者の数               |
+| severeCases | Number of current severe cases  | 重症者数                               |
+| recovered   | Total number of recovered cases | 退院又は療養解除となった者の数（累積） |
+| deaths      | Total number of deaths          | 死亡者数（累積）                       |
+| rt          | Effective reproduction number   | 実効再生産数                           |
 
 #### Data Source
 
