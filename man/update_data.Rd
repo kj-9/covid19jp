@@ -7,7 +7,7 @@
 update_data(force = FALSE)
 }
 \arguments{
-\item{force}{A logical value, False by default. if set to TRUE, install
+\item{force}{A logical value. FALSE by default. if set to TRUE, install
 updates without prompt question}
 }
 \description{
