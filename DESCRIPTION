@@ -1,10 +1,11 @@
 Package: covid19jp
 Title: Japanese Covid-19 Datasets
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
-    person(given = "kj-9",
+    person(given = "Koji",
+           family = "Higuchi",
            role = c("aut", "cre"),
-           email = "46800811+kj-9@users.noreply.github.com")
+           email = "kojih9@gmail.com")
 Description: Ready to use Japanese covid-19 datasets.
 License: MIT + file LICENSE
 URL: https://github.com/kj-9/covid19jp

@@ -6,54 +6,39 @@
 
 # covid19jp : R package for Japanese Covid-19 Datasets
 
-The covid19jp package provides ready to use Japanese covid-19 datasets.
+This package provides ready to use Japanese covid-19 datasets.
 
-- `japan_daily`: Daily naition-level data for Japanese covid-19 situation.
-- `pref_daily`: Daily prefecture-level data for Japanese covid-19 situation.
-- `pref_weekly`: Weekly prefecture-level data for Japanese covid-19 situation (contains some additional data like hospital capacity not appear in `pref_daily`).
-- `pref`: Helper master data for Japanese prefectures.
-
-These datasets originally from Japanese MHLW website. MHLW releases their covid-19 data in poor format which requires a lot of data cleaning before analyzing it. So I made this.
-
-For `japan_daily` and `pref_daily`, Huge thanks to Kazuki OGIWARA's [repo](https://github.com/kaz-ogiwara/covid19). They did most of the data cleaning!
-
-I created `update_data` function heavily referring to [coronavirus](https://github.com/RamiKrispin/coronavirus) package. Thanks!
-
-### For people not using R
-
-CSV/JSON format files are also available under `data-raw/dist`. see also `Dataset detail` below.
-
-### Note
-
-- This repo is still under frequent development. data schema and interfaces can be changed.
-- Due to change of data source format, updating datasets may be delayed.
-- I'm happy to receive your feedback! Please create issues for feedback.
+- `japan_daily`: Daily nation-level dataset of Japanese covid-19 situation.
+- `pref_daily`: Daily prefecture-level dataset of Japanese covid-19 situation.
+- `pref_weekly`: Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `pref_daily`).
+- `pref`: Master dataset for Japanese prefectures.
 
 ## Installation
 
-Currently, this package is not on CRAN. Please install from this github repo.
-
 ```r
+# From CRAN (may not be latest dataset)
+instal.packages("covid19jp")
+
 # Install the development version from GitHub
 devtools::install_github("kj-9/covid19jp", ref = "master")
 ```
 
-## Update datasets
-
-This GitHub repo updates datasets daily, but your installed R package will not.
-To update datasets, use `update_date`.
+We update datasets in devolpment version daily. To get latest datasets, run `update_date`.
 
 ```r
-library(covid19jp)
-update_data()
+# update your datasets
+covid19jp::update_data()
 ```
+
+### Notes
+
+- CSV/JSON format files are also available [here](https://github.com/kj-9/covid19jp/tree/master/data-raw/dist). See also `Dataset detail` below.
+
+- Due to the data source format changes, updating datasets in development version maight delay.
 
 ## Dataset detail
 
 ### `japan_daily`
-
-csv: `data-raw/dist/jp_daily.csv`
-json: `data-raw/dist/jp_daily.json`
 
 #### Columns
 
@@ -70,13 +55,9 @@ json: `data-raw/dist/jp_daily.json`
 
 #### Data Source
 
-- [prefectures.csv](https://github.com/kaz-ogiwara/covid19/blob/master/data/prefectures.csv) from [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
-- Originaly from Japanese MHLW website. See above link to github repo.
+- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originaly from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_daily`
-
-csv: `data-raw/dist/pref_daily.csv`
-json: `data-raw/dist/pref_daily.json`
 
 #### Columns
 
@@ -96,15 +77,11 @@ json: `data-raw/dist/pref_daily.json`
 
 #### Data Source
 
-- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19)
-- Originaly from Japanese MHLW website. See above link to github repo.
+- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originaly from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_weekly`
 
 Currently, only dataset after 2020-09-02 is available.
-
-csv: `data-raw/dist/pref_weekly.csv`
-json: `data-raw/dist/pref_weekly.json`
 
 #### Columns
 
@@ -143,8 +120,6 @@ json: `data-raw/dist/pref_weekly.json`
 
 ### `pref`
 
-csv: `data-raw/dist/pref.csv`
-
 #### Columns
 
 | name       | description                                  | description in Japanese |
@@ -157,3 +132,7 @@ csv: `data-raw/dist/pref.csv`
 #### Data Source
 
 - Statistics Bureau of Japane (xlsx file): https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
+
+## Reference
+
+The function `update_data` is heavily refered to [coronavirus](https://github.com/RamiKrispin/coronavirus) package. Thanks!
