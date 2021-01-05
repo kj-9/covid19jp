@@ -17,7 +17,7 @@ This package provides ready to use Japanese covid-19 datasets.
 
 - CSV/JSON format files are also available [here](https://github.com/kj-9/covid19jp/tree/master/data-raw/dist). See also `Dataset detail` below.
 
-- Due to the data source format changes, updating datasets in development version maight delay.
+- Due to the data source format changes, updating datasets in development version might delay.
 
 ## Installation
 
@@ -55,7 +55,7 @@ covid19jp::update_data()
 
 #### Data Source
 
-- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originaly from Japanese MHLW website. See above link to github repo.)
+- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originally from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_daily`
 
@@ -77,7 +77,7 @@ covid19jp::update_data()
 
 #### Data Source
 
-- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originaly from Japanese MHLW website. See above link to github repo.)
+- [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originally from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_weekly`
 
@@ -93,19 +93,19 @@ Currently, only dataset after 2020-09-02 is available.
 | date                        | Date in JST                                                                   | 日本時間での日付                               |
 | activeCases                 | Number of current active cases                                                | 入院治療等を要する者の数                       |
 | hospitalizedCases           | Number of current hospitalized cases                                          | 入院者数（入院確定者数を含む）                 |
-| hospitalizedCasesPhase      | Current altert phase level for hospitalized cases                             | 入院者現フェーズ                               |
+| hospitalizedCasesPhase      | Current alert phase level for hospitalized cases                              | 入院者現フェーズ                               |
 | hospitalizedCasesMaxPhase   | Maximum alert phase level for hospitalized cases                              | 入院者最終フェーズ                             |
 | hospitalizedCasesCap        | Current bed capacity for hospitalized cases                                   | 入院者確保病床数                               |
 | hospitalizedCasesCapPlanned | Bed capacity for hospitalized cases planned for the maximum alert phase       | 最終フェーズにおける入院者即応病床（計画）数   |
 | hospitalizedCasesUTE        | Current hospital (bed) utilization rate for hospitalized cases                | 確保病床数に対する入院者使用率                 |
 | severeCases                 | Number of current severe cases                                                | 重症者数                                       |
-| severeCasesPhase            | Current altert phase level for severe cases                                   | 重症者現フェーズ                               |
+| severeCasesPhase            | Current alert phase level for severe cases                                    | 重症者現フェーズ                               |
 | severeCasesMaxPhase         | Maximum alert phase level for severe cases                                    | 重症者最終フェーズ                             |
 | severeCasesCap              | Current bed capacity for severe cases                                         | 重症者確保病床数                               |
 | severeCaseaCapPlanned       | Bed capacity for severe cases planned for the maximum alert phase             | 最終フェーズにおける重症者即応病床（計画）数   |
 | severeCasesUTE              | Current hospital (bed) utilization rate for severe cases                      | 確保病床数に対する重症者使用率                 |
 | atHotelCases                | Number of current cases staying at hotels (or other accommodation facilities) | 宿泊療養者数                                   |
-| atHotelCasesPhase           | Current altert phase level for cases staying at hotels                        | 宿泊療養現フェーズ                             |
+| atHotelCasesPhase           | Current alert phase level for cases staying at hotels                         | 宿泊療養現フェーズ                             |
 | atHotelCasesMaxPhase        | Maximum alert phase level for cases staying at hotels                         | 宿泊療養最終フェーズ                           |
 | atHotelCasesCap             | Current room capacity for cases staying at hotels                             | 宿泊療養確保居室数                             |
 | atHotelCasesCapPlanned      | Room capacity for cases staying at hotels planned for the maximum alert phase | 最終フェーズにおける宿泊療養施設居室（計画）数 |
@@ -131,8 +131,8 @@ Currently, only dataset after 2020-09-02 is available.
 
 #### Data Source
 
-- Statistics Bureau of Japane (xlsx file): https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
+- Statistics Bureau of Japan (xlsx file): https://www.stat.go.jp/data/nihon/zuhyou/n200200200.xlsx
 
 ## Reference
 
-The function `update_data` is heavily refered to [coronavirus](https://github.com/RamiKrispin/coronavirus) package. Thanks!
+The function `update_data` is heavily referred to [coronavirus](https://github.com/RamiKrispin/coronavirus) package. Thanks!
