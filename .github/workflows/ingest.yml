@@ -30,5 +30,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-      - name: Run test
-        run: docker run --entrypoint 'Rscript' --workdir /home/rstudio -v $(pwd):/home/rstudio ghcr.io/kj-9/r-java:latest -e 'devtools::test()'
