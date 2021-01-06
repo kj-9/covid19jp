@@ -6,7 +6,7 @@
 \title{Japanese prefecture-level daily data of covid-19 situation. More details are
 available \href{https://github.com/kj-9/covid19jp#pref_daily}{here}.}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14190 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14237 rows and 11 columns.
 }
 \usage{
 pref_daily
