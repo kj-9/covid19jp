@@ -59,9 +59,7 @@ clean <- function(df) {
     {
       out <-
         df %>%
-        mutate(
-          prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")
-        ) %>%
+        mutate(prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")) %>%
         filter(prefectureNameJP %in% pref$prefJP) %>%
         transmute(
           prefJP = prefectureNameJP,
@@ -100,11 +98,18 @@ clean <- function(df) {
 }
 
 udf_list <-
-tibble(
-  url = "https://www.mhlw.go.jp/content/10900000/000712272.pdf",
-  fileName = "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（12月23日０時時点）",
-  date = as.Date("2020-12-23")
-)
+  tibble(
+    url = c(
+      "https://www.mhlw.go.jp/content/10900000/000712272.pdf",
+      "https://www.mhlw.go.jp/content/10900000/000714776.pdf"
+    ),
+    fileName = c(
+      "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（12月23日０時時点）",
+      "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（2020年12月30日０時時点）"
+    ),
+
+    date = as.Date(c("2020-12-23", "2020-12-30"))
+  )
 
 
 ingest <- function() {
@@ -123,7 +128,12 @@ ingest <- function() {
       clean())) %>%
     tidyr::unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
-    select(prefCode, prefJP, prefEN, everything(), -url, -fileName, -population) %>%
+    select(
+      prefCode,
+      prefJP,
+      prefEN,
+      everything(), -url, -fileName, -population
+    ) %>%
     arrange(prefCode, date)
 
 
