@@ -8,8 +8,9 @@
 #'   function enables to refresh the package dataset to the most up-to-date
 #'   data. Changes will be available on the global environment.
 #' @export update_data
+#' @return No return value, called for updating covid19jp package datasets.
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # update with a question prompt
 #' update_data(force = FALSE)
 #'
