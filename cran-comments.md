@@ -1,3 +1,11 @@
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+- add `\value` description to `update_data`.
+
+- modify `\dontrun{}` to `\donttest{}` in `update_date` example.
+
 ## Test environments
 
 - local WSL Ubuntu 20.04 R 4.0.3
