@@ -10,6 +10,9 @@ update_data(force = FALSE)
 \item{force}{A logical value. FALSE by default. if set to TRUE, install
 updates without prompt question}
 }
+\value{
+No return value, called for updating covid19jp package datasets.
+}
 \description{
 Update the package datasets on the global environment with the
 most recent data on the development version.
@@ -21,7 +24,7 @@ function enables to refresh the package dataset to the most up-to-date
 data. Changes will be available on the global environment.
 }
 \examples{
-\dontrun{
+\donttest{
 # update with a question prompt
 update_data(force = FALSE)
 
