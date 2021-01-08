@@ -6,7 +6,7 @@
 \title{Japanese daily data of covid-19 situation. More details are available
 \href{https://github.com/kj-9/covid19jp#japan_daily}{here}.}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 357 rows and 8 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 358 rows and 8 columns.
 }
 \usage{
 jp_daily
