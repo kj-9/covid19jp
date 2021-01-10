@@ -32,7 +32,7 @@ update_data <- function(force = FALSE) {
     if (q == "y" | q == "yes") {
       tryCatch(
         expr = {
-          devtools::install_github("kj-9/covid19jp",
+          remotes::install_github("kj-9/covid19jp",
             upgrade = "never",
             ref = "master"
           )
