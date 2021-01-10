@@ -1,6 +1,6 @@
 Package: covid19jp
 Title: Japanese Covid-19 Datasets
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Koji",
            family = "Higuchi",
