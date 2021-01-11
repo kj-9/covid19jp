@@ -38,6 +38,8 @@ covid19jp::update_data()
 
 ### `japan_daily`
 
+Daily nation-level dataset of Japanese covid-19 situation.
+
 #### Columns
 
 | name        | description                     | description in Japanese                |
@@ -56,6 +58,8 @@ covid19jp::update_data()
 - [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originally from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_daily`
+
+Daily prefecture-level dataset of Japanese covid-19 situation.
 
 #### Columns
 
@@ -78,6 +82,8 @@ covid19jp::update_data()
 - [Toyo Keizai Online "Coronavirus Disease (COVID-19) Situation Report in Japan" by Kazuki OGIWARA](https://github.com/kaz-ogiwara/covid19) (Originally from Japanese MHLW website. See above link to github repo.)
 
 ### `pref_weekly`
+
+Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `pref_daily`).
 
 Currently, only dataset after 2020-09-02 is available.
 
@@ -117,6 +123,8 @@ Currently, only dataset after 2020-09-02 is available.
 - Japanese MHLW website: https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html
 
 ### `pref`
+
+Master dataset for Japanese prefectures.
 
 #### Columns
 
