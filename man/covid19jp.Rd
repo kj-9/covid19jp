@@ -5,7 +5,6 @@
 \alias{covid19jp}
 \title{covid19jp: Japanese Covid-19 Datasets}
 \description{
-The covid19jp package provides ready to use Japanese covid-19 datasets. More
-details are available
-\href{https://github.com/kj-9/covid19jp#dataset-detail}{here}.
+The covid19jp package provides ready to use Japanese covid-19 datasets.
+More details are available \href{https://github.com/kj-9/covid19jp#dataset-detail}{here}.
 }

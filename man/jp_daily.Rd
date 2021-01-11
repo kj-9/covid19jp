@@ -3,8 +3,7 @@
 \docType{data}
 \name{jp_daily}
 \alias{jp_daily}
-\title{Japanese daily data of covid-19 situation. More details are available
-\href{https://github.com/kj-9/covid19jp#japan_daily}{here}.}
+\title{Japanese daily data of covid-19 situation.}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 361 rows and 8 columns.
 }
@@ -12,7 +11,6 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 jp_daily
 }
 \description{
-Japanese daily data of covid-19 situation. More details are available
-\href{https://github.com/kj-9/covid19jp#japan_daily}{here}.
+More details are available \href{https://github.com/kj-9/covid19jp#japan_daily}{here}.
 }
 \keyword{datasets}

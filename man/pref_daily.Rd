@@ -3,8 +3,7 @@
 \docType{data}
 \name{pref_daily}
 \alias{pref_daily}
-\title{Japanese prefecture-level daily data of covid-19 situation. More details are
-available \href{https://github.com/kj-9/covid19jp#pref_daily}{here}.}
+\title{Japanese prefecture-level daily data of covid-19 situation.}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14472 rows and 11 columns.
 }
@@ -12,7 +11,6 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 pref_daily
 }
 \description{
-Japanese prefecture-level daily data of covid-19 situation. More details are
-available \href{https://github.com/kj-9/covid19jp#pref_daily}{here}.
+More details are available \href{https://github.com/kj-9/covid19jp#pref_daily}{here}.
 }
 \keyword{datasets}

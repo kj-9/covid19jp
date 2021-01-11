@@ -3,8 +3,7 @@
 \docType{data}
 \name{pref}
 \alias{pref}
-\title{Master data for Japanese prefectures. More details are available
-\href{https://github.com/kj-9/covid19jp#pref}{here}.}
+\title{Master data for Japanese prefectures.}
 \format{
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 47 rows and 4 columns.
 }
@@ -12,7 +11,6 @@ An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, 
 pref
 }
 \description{
-Master data for Japanese prefectures. More details are available
-\href{https://github.com/kj-9/covid19jp#pref}{here}.
+More details are available \href{https://github.com/kj-9/covid19jp#pref}{here}.
 }
 \keyword{datasets}

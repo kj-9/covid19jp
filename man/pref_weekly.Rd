@@ -3,8 +3,7 @@
 \docType{data}
 \name{pref_weekly}
 \alias{pref_weekly}
-\title{Japanese prefecture-level weekly data of covid-19 situation. More details are
-available \href{https://github.com/kj-9/covid19jp#pref_weekly}{here}.}
+\title{Japanese prefecture-level weekly data of covid-19 situation.}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 846 rows and 26 columns.
 }
@@ -12,7 +11,6 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 pref_weekly
 }
 \description{
-Japanese prefecture-level weekly data of covid-19 situation. More details are
-available \href{https://github.com/kj-9/covid19jp#pref_weekly}{here}.
+More details are available \href{https://github.com/kj-9/covid19jp#pref_weekly}{here}.
 }
 \keyword{datasets}
