@@ -3,7 +3,7 @@
 \docType{data}
 \name{pref}
 \alias{pref}
-\title{Master data for Japanese prefectures.}
+\title{Master data for Japanese prefectures}
 \format{
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 47 rows and 4 columns.
 }

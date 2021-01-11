@@ -3,7 +3,7 @@
 \docType{data}
 \name{pref_daily}
 \alias{pref_daily}
-\title{Japanese prefecture-level daily data of covid-19 situation.}
+\title{Japanese prefecture-level daily data of covid-19 situation}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14472 rows and 11 columns.
 }

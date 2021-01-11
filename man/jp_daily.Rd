@@ -3,7 +3,7 @@
 \docType{data}
 \name{jp_daily}
 \alias{jp_daily}
-\title{Japanese daily data of covid-19 situation.}
+\title{Japanese daily data of covid-19 situation}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 361 rows and 8 columns.
 }
