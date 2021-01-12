@@ -18,8 +18,11 @@ Language: en, ja
 Suggests: 
     testthat,
     purrr,
-    pointblank
+    pointblank,
+    knitr,
+    rmarkdown
 Depends: 
     R (>= 2.10)
 Imports: 
     remotes
+VignetteBuilder: knitr
