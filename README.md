@@ -21,17 +21,21 @@ This package provides ready to use Japanese covid-19 datasets.
 
 ## Installation
 
-```r
-# Currently, CRAN build is failing. Please install from github repo.
-# Install the development version from GitHub
-devtools::install_github("kj-9/covid19jp", ref = "master", upgrade = "never")
-```
-
-We update datasets in devolpment version daily. To get latest datasets, run `update_date`.
+We update datasets daily in devolpment repo. So if you install from CRAN, please run `update_date` to get latest datasets,
 
 ```r
+# From CRAN
+install.packages("covid19jp")
+
 # update your datasets
 covid19jp::update_data()
+```
+
+or install from GitHub directly to get latest datasets,
+
+```r
+# Install the development version from GitHub
+remotes::install_github("kj-9/covid19jp", ref = "master", upgrade = "never")
 ```
 
 ## Dataset detail
