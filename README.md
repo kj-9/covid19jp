@@ -1,6 +1,7 @@
  <!-- badges: start -->
 
 [![R build status](https://github.com/kj-9/covid19jp/workflows/R-CMD-check/badge.svg)](https://github.com/kj-9/covid19jp/actions)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/covid19jp)](https://cran.r-project.org/package=covid19jp)
 
   <!-- badges: end -->
 
