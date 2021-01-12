@@ -13,18 +13,21 @@
 #' \donttest{
 #' # update with a question prompt
 #' update_data(force = FALSE)
-#'
+#' }
+#' \donttest{
 #' # update without a question prompt
 #' update_data(force = TRUE)
 #' }
-#'
 update_data <- function(force = FALSE) {
-  hash_current <- readLines(system.file("DATA_HASH", package = "covid19jp"))
-  hash_latest <- readLines("https://raw.githubusercontent.com/kj-9/covid19jp/master/inst/DATA_HASH")
+  hash_current <-
+    readLines(system.file("DATA_HASH", package = "covid19jp"))
+  hash_latest <-
+    readLines("https://raw.githubusercontent.com/kj-9/covid19jp/master/inst/DATA_HASH")
 
   if (hash_current != hash_latest) {
     if (!force) {
-      q <- tolower(readline("Updates are available. Want to update? n/Y: "))
+      q <-
+        tolower(readline("Updates are available. Want to update? n/Y: "))
     } else {
       q <- "y"
     }

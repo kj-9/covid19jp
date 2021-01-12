@@ -9,10 +9,10 @@
 
 This package provides ready to use Japanese covid-19 datasets.
 
-- `japan_daily`: Daily nation-level dataset of Japanese covid-19 situation.
-- `pref_daily`: Daily prefecture-level dataset of Japanese covid-19 situation.
-- `pref_weekly`: Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `pref_daily`).
-- `pref`: Master dataset for Japanese prefectures.
+- `?jp_daily`: Daily nation-level dataset of Japanese covid-19 situation.
+- `?pref_daily`: Daily prefecture-level dataset of Japanese covid-19 situation.
+- `?pref_weekly`: Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `?pref_daily`).
+- `?pref`: Master dataset for Japanese prefectures.
 
 ### Notes
 
@@ -41,7 +41,7 @@ remotes::install_github("kj-9/covid19jp", ref = "master", upgrade = "never")
 
 ## Dataset detail
 
-### `japan_daily`
+### `jp_daily`
 
 Daily nation-level dataset of Japanese covid-19 situation.
 

@@ -27,9 +27,9 @@ data. Changes will be available on the global environment.
 \donttest{
 # update with a question prompt
 update_data(force = FALSE)
-
+}
+\donttest{
 # update without a question prompt
 update_data(force = TRUE)
 }
-
 }

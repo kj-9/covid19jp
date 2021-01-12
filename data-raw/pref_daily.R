@@ -1,5 +1,5 @@
 library(dplyr)
-utils = modules::use("data-raw/utils.R")
+utils <- modules::use("data-raw/utils.R")
 
 url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/prefectures.csv"
 pref_daily <- readr::read_csv(url, na = "-") %>%

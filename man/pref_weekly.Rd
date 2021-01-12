@@ -3,7 +3,7 @@
 \docType{data}
 \name{pref_weekly}
 \alias{pref_weekly}
-\title{Japanese prefecture-level weekly data of covid-19 situation}
+\title{Weekly prefecture-level dataset of Japanese covid-19 situation}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 846 rows and 26 columns.
 }
@@ -11,6 +11,8 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 pref_weekly
 }
 \description{
+This dataset contains some additional columns like hospital capacity not appear
+in `?pref_daily
 More details are available \href{https://github.com/kj-9/covid19jp#pref_weekly}{here}.
 }
 \keyword{datasets}
