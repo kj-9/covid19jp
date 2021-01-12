@@ -1,0 +1,10 @@
+reference:
+  - title: "Dataset"
+  - contents:
+      - jp_daily
+      - pref_daily
+      - pref_weekly
+      - pref
+  - title: "Function"
+  - contents:
+      - update_data
