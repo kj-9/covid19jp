@@ -19,23 +19,50 @@ get_list <- function() {
   utils$info("get url list of pdf files...")
 
   res_nodes <- xml2::read_html(paste0(url_base, url_home)) %>%
-    rvest::html_nodes("div .m-grid__col1 ul li a")
+    rvest::html_nodes("div .m-grid__col1 ul li")
 
-  url_data <- rvest::html_attr(res_nodes, "href") %>%
-    paste0(url_base, .)
 
-  link_text <- res_nodes %>%
-    rvest::html_text()
+  url_chr <- res_nodes %>%
+    map(rvest::html_nodes, "a") %>%
+    map(rvest::html_attr, "href") %>% # to preserve zero length character
+    map_chr( ~ ifelse(length(.x) == 0, NA, paste0(url_base, .x)))
 
-  out <- tibble(url = url_data, fileName = link_text) %>%
+  link_chr <- res_nodes %>%
+    map_chr(rvest::html_text)
+
+  stopifnot(length(url_chr) == length(link_chr))
+
+  url_list <- tibble(url = url_chr, file_name = link_chr) %>%
     mutate(
-      date = fileName %>% stringi::stri_trans_nfkc() %>%
-        stringr::str_extract("[0-9]{1,2}月[0-9]{1,2}日") %>% # need to change for CRAN
-        paste0("2020-", .) %>% # This will break next year!
-        readr::parse_date(format = "%Y-%m月%d日") %>%
+      date = file_name %>% stringi::stri_trans_nfkc() %>%
+        stringr::str_extract("[0-9]{4}年[0-9]{1,2}月[0-9]{1,2}日") %>% # need to change for CRAN
+        readr::parse_date(format = "%Y年%m月%d日") %>%
         as.Date()
+    )
+
+  # after 2020-12-23, format of website changed.
+  # need to further cleaning...
+  pos <- which(url_list$date == "2020-12-16") - 1
+  stopifnot(length(pos) == 1)
+
+  url_list_after_20201223 <- url_list[seq_len(pos),] %>%
+    mutate(
+      file_name_cp = file_name,
+      file_name = dplyr::lag(file_name, 1),
+      date = dplyr::lag(date, 1)
     ) %>%
-    return(out)
+    filter(stringr::str_detect(file_name_cp, "PDF形式")) %>%
+    select(-file_name_cp)
+
+  out <-
+    rbind(url_list_after_20201223, url_list[-seq_len(pos),]) %>%
+    # currently, this function only support data after 2020-09-02.
+    filter(date >= "2020-09-02") %>%
+    arrange(date)
+
+  pointblank::expect_rows_distinct(out, vars(url, file_name, date))
+
+  return(out)
 }
 
 
@@ -55,85 +82,63 @@ clean <- function(df) {
   utils$info("cleaning data...")
   out <- df
 
-  tryCatch(
-    {
-      out <-
-        df %>%
-        mutate(prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")) %>%
-        filter(prefectureNameJP %in% pref$prefJP) %>%
-        transmute(
-          prefJP = prefectureNameJP,
-          activeCases = readr::parse_number(V2),
-          hospitalizedCases = readr::parse_number(V3),
-          hospitalizedCasesPhase = split_slash(V4, 1),
-          hospitalizedCasesMaxPhase = split_slash(V4, 2),
-          hospitalizedCasesCap = readr::parse_number(V5),
-          hospitalizedCasesCapPlanned = readr::parse_number(V7),
-          hospitalizedCasesUTE = readr::parse_number(V6) * 0.01,
-          severeCases = readr::parse_number(V8),
-          severeCasesPhase = split_slash(V9, 1),
-          severeCasesMaxPhase = split_slash(V9, 2),
-          severeCasesCap = readr::parse_number(V10),
-          severeCaseaCapPlanned = readr::parse_number(V12),
-          severeCasesUTE = readr::parse_number(V11) * 0.01,
-          atHotelCases = readr::parse_number(V13),
-          atHotelCasesPhase = split_slash(V14, 1),
-          atHotelCasesMaxPhase = split_slash(V14, 2),
-          atHotelCasesCap = readr::parse_number(V15),
-          atHotelCasesCapPlanned = readr::parse_number(V17),
-          atHotelCasesUTE = readr::parse_number(V16) * 0.01,
-          atHomeCases = readr::parse_number(V18),
-          atWelfareFacilityCases = readr::parse_number(V19),
-          unconfirmedCases = readr::parse_number(V20)
-        )
+  tryCatch({
+    out <-
+      df %>%
+      mutate(prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")) %>%
+      filter(prefectureNameJP %in% pref$prefJP) %>%
+      transmute(
+        prefJP = prefectureNameJP,
+        activeCases = readr::parse_number(V2),
+        hospitalizedCases = readr::parse_number(V3),
+        hospitalizedCasesPhase = split_slash(V4, 1),
+        hospitalizedCasesMaxPhase = split_slash(V4, 2),
+        hospitalizedCasesCap = readr::parse_number(V5),
+        hospitalizedCasesCapPlanned = readr::parse_number(V7),
+        hospitalizedCasesUTE = readr::parse_number(V6) * 0.01,
+        severeCases = readr::parse_number(V8),
+        severeCasesPhase = split_slash(V9, 1),
+        severeCasesMaxPhase = split_slash(V9, 2),
+        severeCasesCap = readr::parse_number(V10),
+        severeCaseaCapPlanned = readr::parse_number(V12),
+        severeCasesUTE = readr::parse_number(V11) * 0.01,
+        atHotelCases = readr::parse_number(V13),
+        atHotelCasesPhase = split_slash(V14, 1),
+        atHotelCasesMaxPhase = split_slash(V14, 2),
+        atHotelCasesCap = readr::parse_number(V15),
+        atHotelCasesCapPlanned = readr::parse_number(V17),
+        atHotelCasesUTE = readr::parse_number(V16) * 0.01,
+        atHomeCases = readr::parse_number(V18),
+        atWelfareFacilityCases = readr::parse_number(V19),
+        unconfirmedCases = readr::parse_number(V20)
+      )
 
-      utils$info("cleaning succeeded.")
-    },
-    error = function(e) {
-      utils$error(paste0(e, "returning raw data."))
-    }
-  )
+    utils$info("cleaning succeeded.")
+  },
+  error = function(e) {
+    utils$error(paste0(e, "returning raw data."))
+  })
 
   return(out)
 }
-
-udf_list <-
-  tibble(
-    url = c(
-      "https://www.mhlw.go.jp/content/10900000/000712272.pdf",
-      "https://www.mhlw.go.jp/content/10900000/000714776.pdf"
-    ),
-    fileName = c(
-      "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（12月23日０時時点）",
-      "新型コロナウイルス感染症患者の療養状況等及び入院患者受入病床数等に関する調査結果（2020年12月30日０時時点）"
-    ),
-
-    date = as.Date(c("2020-12-23", "2020-12-30"))
-  )
 
 
 ingest <- function() {
   utils$info("start job ingest::medical_treatment")
 
   # get list of pdf files
-  url_list <- get_list() %>%
-    # currently, this function only support data after 2020-09-02.
-    filter(date >= "2020-09-02") %>%
-    rbind(udf_list) %>%
-    arrange(date)
+  url_list <- get_list()
 
   df <- url_list %>%
     mutate(data = purrr::map(url, ~ .x %>%
-      extract_table() %>%
-      clean())) %>%
+                               extract_table() %>%
+                               clean())) %>%
     tidyr::unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
-    select(
-      prefCode,
-      prefJP,
-      prefEN,
-      everything(), -url, -fileName, -population
-    ) %>%
+    select(prefCode,
+           prefJP,
+           prefEN,
+           everything(),-url,-file_name,-population) %>%
     arrange(prefCode, date)
 
 
