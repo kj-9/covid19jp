@@ -1,8 +1,8 @@
 library(pointblank)
-library(purrr)
+
+keep_num <- function(list) Filter(function(x) x == "numeric", list)
 
 test_that("testing japan_daily", {
-
   schema <- col_schema(
     date = "Date",
     tests = "numeric",
@@ -17,7 +17,7 @@ test_that("testing japan_daily", {
   expect_rows_distinct(jp_daily)
   expect_col_schema_match(jp_daily, schema)
   expect_col_vals_not_null(jp_daily, vars(date))
-  expect_col_vals_gte(jp_daily, keep(schema, ~ .x =="numeric") %>% names, 0)
+  expect_col_vals_gte(jp_daily, keep_num(schema) %>% names(), 0)
 })
 
 test_that("testing pref", {
@@ -53,7 +53,7 @@ test_that("testing pref_daily", {
   expect_col_schema_match(pref_daily, schema)
   expect_col_vals_in_set(pref_daily, prefJP, pref$prefJP)
   expect_col_vals_not_null(pref_daily, vars(prefCode, prefJP, prefEN, date))
-  expect_col_vals_gte(jp_daily, keep(schema, ~ .x =="numeric") %>% names, 0)
+  expect_col_vals_gte(jp_daily, keep_num(schema) %>% names(), 0)
 })
 
 
@@ -90,5 +90,5 @@ test_that("testing pref_weekly", {
   expect_col_schema_match(pref_weekly, schema)
   expect_col_vals_in_set(pref_weekly, prefJP, pref$prefJP)
   expect_col_vals_not_null(pref_weekly, vars(prefCode, prefJP, prefEN, date))
-  expect_col_vals_gte(pref_weekly, keep(schema, ~ .x =="numeric") %>% names, 0)
+  expect_col_vals_gte(pref_weekly, keep_num(schema) %>% names(), 0)
 })
