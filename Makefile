@@ -25,7 +25,7 @@ test:
 	Rscript -e devtools::test()
 
 install:
-	Rscript -e "remotes::install_deps(dependencies = TRUE); remotes::install_cran("rcmdcheck");"
+	Rscript -e remotes::install_deps(dependencies = TRUE)
 
 .FORCE:
 .PHONY:
