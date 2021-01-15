@@ -13,7 +13,25 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-      ## TODO:Add R setup
+      
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: 4.0.3
+
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: R:Run
         run: |
@@ -22,7 +40,7 @@ jobs:
           make document
           make test
           make ga-commit
-          
+
       - name: Push changes
         #if: ${{ env.NUM_UPDATED_FILES > 0 }} will this be error?
         uses: ad-m/github-push-action@master
