@@ -39,11 +39,12 @@ jobs:
           make data
           make document
           make test
-          make ga-commit
+          git diff
+        #make ga-commit
 
-      - name: Push changes
-        #if: ${{ env.NUM_UPDATED_FILES > 0 }} will this be error?
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      #- name: Push changes
+      #  #if: ${{ env.NUM_UPDATED_FILES > 0 }} will this be error?
+      #  uses: ad-m/github-push-action@master
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    branch: ${{ github.ref }}
