@@ -33,5 +33,4 @@ install:
 	ga-commit
 	document
 	test
-	count-change
 	install
