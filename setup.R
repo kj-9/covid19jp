@@ -16,7 +16,7 @@ system("sudo apt-get install -y default-jre")
 # install pre-build dependencies
 install.packages(
   c(
-    "remotes",
+    "usethis",
     "purrr",
     "dplyr",
     "readr",
