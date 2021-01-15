@@ -13,32 +13,7 @@ on:
 name: R-CMD-check
 
 jobs:
-  update-DATA_HASH:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v2
-      - name: update DATA_HASH
-        run: find data/ -type f -print0 | sort -z | xargs -0 sha1sum | sort | sha1sum > inst/DATA_HASH
-      - name: Count updated files
-        run: |
-          echo "NUM_UPDATED_FILES=$(git diff --name-only | wc -l)" >> $GITHUB_ENV
-          echo "number of updated files: $NUM_UPDATED_FILES"
-      - name: Commit all updated files
-        if: ${{ env.NUM_UPDATED_FILES > 0 }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Automatic data update" -a
-      - name: Push changes
-        if: ${{ env.NUM_UPDATED_FILES > 0 }}
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
   R-CMD-check:
-    needs: [update-DATA_HASH]
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})

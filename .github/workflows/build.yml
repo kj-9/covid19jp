@@ -1,0 +1,31 @@
+name: pre-build
+on:
+  workflow_dispatch:
+  #push:
+  #  branches:
+  #    - master
+  #schedule:
+  #  - cron: "0 */3 * * *" # UTC
+
+jobs:
+  pre-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      ## TODO:Add R setup
+
+      - name: R:Run
+        run: |
+          make install
+          make data
+          make document
+          make test
+          make ga-commit
+          
+      - name: Push changes
+        #if: ${{ env.NUM_UPDATED_FILES > 0 }} will this be error?
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
