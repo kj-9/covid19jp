@@ -27,8 +27,18 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: Install system dependencies
-        run: Rscript setup.R ubuntu 20.04
-
+        run: |
+          install.packages("remotes")
+          cmds <- remotes::system_requirements("ubuntu", "20.04")
+          for (cmd in cmds) {
+            system(paste("sudo", cmd))
+          }
+          system("sudo apt-get install -y default-jre")
+        shell: Rscript {0}
+        
+      - name: Install R packages
+        run: Rscript setup.R
+       
       - name: pre-build actions
         run: |
           make data
