@@ -33,14 +33,16 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: R:Run
+      - name: Install system dependencies
+        run: Rscript setup.R ubuntu 20.04
+
+      - name: pre-build actions
         run: |
-          make install
           make data
           make document
           make test
           git diff
-        #make ga-commit
+        #MAKE_ENV=GITHUB_ACTIONS make ga-commit
 
       #- name: Push changes
       #  #if: ${{ env.NUM_UPDATED_FILES > 0 }} will this be error?

@@ -19,13 +19,10 @@ else
 endif
 
 document:
-	Rscript -e devtools::document()
+	Rscript -e "devtools::document()"
 
 test:
-	Rscript -e devtools::test()
-
-install:
-	Rscript -e remotes::install_deps(dependencies = TRUE)
+	Rscript -e "devtools::test()"
 
 .FORCE:
 .PHONY:
