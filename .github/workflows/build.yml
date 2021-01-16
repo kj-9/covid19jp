@@ -9,7 +9,7 @@ on:
 
 jobs:
   pre-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
           for (cmd in cmds) {
             system(paste("sudo", cmd))
           }
-          system("sudo apt-get install -y default-jre")
+          system("sudo apt-get install -y default-jdk")
         shell: Rscript {0}
         
       - name: Install R packages
