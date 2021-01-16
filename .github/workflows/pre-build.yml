@@ -1,9 +1,6 @@
 name: pre-build
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
   schedule:
     - cron: "0 */3 * * *" # UTC
 
