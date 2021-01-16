@@ -1,11 +1,11 @@
 name: pre-build
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - master
-  #schedule:
-  #  - cron: "0 */3 * * *" # UTC
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 */3 * * *" # UTC
 
 jobs:
   pre-build-action:
@@ -66,3 +66,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+        continue-on-error: true
