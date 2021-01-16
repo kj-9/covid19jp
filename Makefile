@@ -4,16 +4,9 @@ data: .FORCE
 
 ga-commit:
 ifeq ($(MAKE_ENV),GITHUB_ACTIONS)
-	COUNT_CHANGE=$(shell git diff --name-only | wc -l)
-	echo "number of updated files: $COUNT_CHANGE"
-	if [ $COUNT_CHANGE != 0 ]; then \
-		git config --local user.email "action@github.com" \
-		git config --local user.name "GitHub Action" \
-		git commit -m "Automatic data update" -a \
-	else \
-  	    echo "no file changed"; \
-	fi
-
+	git config --local user.email "action@github.com"
+	git config --local user.name "GitHub Action"
+	git commit -m "Automatic data update" -a
 else
 	echo MAKE_ENV is: $(MAKE_ENV). not run.
 endif
