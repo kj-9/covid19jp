@@ -48,18 +48,12 @@ jobs:
           make data
           make document
           make test
-  commit:
-    runs-on: ubuntu-20.04
-    needs: pre-build-action
-    steps:
-      - run: |
+      - name: commit
+        run: |
           MAKE_ENV=GITHUB_ACTIONS make ga-commit
         continue-on-error: true
-  push:
-    runs-on: ubuntu-20.04
-    needs: commit
-    steps:          
-      - uses: ad-m/github-push-action@master
+      - name: push
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
