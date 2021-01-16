@@ -25,7 +25,7 @@ get_list <- function() {
   url_chr <- res_nodes %>%
     map(rvest::html_nodes, "a") %>%
     map(rvest::html_attr, "href") %>% # to preserve zero length character
-    map_chr( ~ ifelse(length(.x) == 0, NA, paste0(url_base, .x)))
+    map_chr(~ ifelse(length(.x) == 0, NA, paste0(url_base, .x)))
 
   link_chr <- res_nodes %>%
     map_chr(rvest::html_text)
@@ -45,7 +45,7 @@ get_list <- function() {
   pos <- which(url_list$date == "2020-12-16") - 1
   stopifnot(length(pos) == 1)
 
-  url_list_after_20201223 <- url_list[seq_len(pos),] %>%
+  url_list_after_20201223 <- url_list[seq_len(pos), ] %>%
     mutate(
       file_name_cp = file_name,
       file_name = dplyr::lag(file_name, 1),
@@ -55,7 +55,7 @@ get_list <- function() {
     select(-file_name_cp)
 
   out <-
-    rbind(url_list_after_20201223, url_list[-seq_len(pos),]) %>%
+    rbind(url_list_after_20201223, url_list[-seq_len(pos), ]) %>%
     # currently, this function only support data after 2020-09-02.
     filter(date >= "2020-09-02") %>%
     arrange(date)
@@ -82,42 +82,46 @@ clean <- function(df) {
   utils$info("cleaning data...")
   out <- df
 
-  tryCatch({
-    out <-
-      df %>%
-      mutate(prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")) %>%
-      filter(prefectureNameJP %in% pref$prefJP) %>%
-      transmute(
-        prefJP = prefectureNameJP,
-        activeCases = readr::parse_number(V2),
-        hospitalizedCases = readr::parse_number(V3),
-        hospitalizedCasesPhase = split_slash(V4, 1),
-        hospitalizedCasesMaxPhase = split_slash(V4, 2),
-        hospitalizedCasesCap = readr::parse_number(V5),
-        hospitalizedCasesCapPlanned = readr::parse_number(V7),
-        hospitalizedCasesUTE = readr::parse_number(V6) * 0.01,
-        severeCases = readr::parse_number(V8),
-        severeCasesPhase = split_slash(V9, 1),
-        severeCasesMaxPhase = split_slash(V9, 2),
-        severeCasesCap = readr::parse_number(V10),
-        severeCaseaCapPlanned = readr::parse_number(V12),
-        severeCasesUTE = readr::parse_number(V11) * 0.01,
-        atHotelCases = readr::parse_number(V13),
-        atHotelCasesPhase = split_slash(V14, 1),
-        atHotelCasesMaxPhase = split_slash(V14, 2),
-        atHotelCasesCap = readr::parse_number(V15),
-        atHotelCasesCapPlanned = readr::parse_number(V17),
-        atHotelCasesUTE = readr::parse_number(V16) * 0.01,
-        atHomeCases = readr::parse_number(V18),
-        atWelfareFacilityCases = readr::parse_number(V19),
-        unconfirmedCases = readr::parse_number(V20)
-      )
 
-    utils$info("cleaning succeeded.")
-  },
-  error = function(e) {
-    utils$error(paste0(e, "returning raw data."))
-  })
+  tryCatch(
+    {
+      out <-
+        df %>%
+        mutate(across(everything(), stringr::str_remove, "注[0-9]+")) %>%
+        mutate(prefectureNameJP = stringr::str_extract(V1, "\\p{Han}+")) %>%
+        filter(prefectureNameJP %in% pref$prefJP) %>%
+        transmute(
+          prefJP = prefectureNameJP,
+          activeCases = readr::parse_number(V2),
+          hospitalizedCases = readr::parse_number(V3),
+          hospitalizedCasesPhase = split_slash(V4, 1),
+          hospitalizedCasesMaxPhase = split_slash(V4, 2),
+          hospitalizedCasesCap = readr::parse_number(V5),
+          hospitalizedCasesCapPlanned = readr::parse_number(V7),
+          hospitalizedCasesUTE = readr::parse_number(V6) * 0.01,
+          severeCases = readr::parse_number(V8),
+          severeCasesPhase = split_slash(V9, 1),
+          severeCasesMaxPhase = split_slash(V9, 2),
+          severeCasesCap = readr::parse_number(V10),
+          severeCaseaCapPlanned = readr::parse_number(V12),
+          severeCasesUTE = readr::parse_number(V11) * 0.01,
+          atHotelCases = readr::parse_number(V13),
+          atHotelCasesPhase = split_slash(V14, 1),
+          atHotelCasesMaxPhase = split_slash(V14, 2),
+          atHotelCasesCap = readr::parse_number(V15),
+          atHotelCasesCapPlanned = readr::parse_number(V17),
+          atHotelCasesUTE = readr::parse_number(V16) * 0.01,
+          atHomeCases = readr::parse_number(V18),
+          atWelfareFacilityCases = readr::parse_number(V19),
+          unconfirmedCases = readr::parse_number(V20)
+        )
+
+      utils$info("cleaning succeeded.")
+    },
+    error = function(e) {
+      utils$error(paste0(e, "returning raw data."))
+    }
+  )
 
   return(out)
 }
@@ -131,14 +135,16 @@ ingest <- function() {
 
   df <- url_list %>%
     mutate(data = purrr::map(url, ~ .x %>%
-                               extract_table() %>%
-                               clean())) %>%
+      extract_table() %>%
+      clean())) %>%
     tidyr::unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
-    select(prefCode,
-           prefJP,
-           prefEN,
-           everything(),-url,-file_name,-population) %>%
+    select(
+      prefCode,
+      prefJP,
+      prefEN,
+      everything(), -url, -file_name, -population
+    ) %>%
     arrange(prefCode, date)
 
 
