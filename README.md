@@ -91,7 +91,7 @@ Daily prefecture-level dataset of Japanese covid-19 situation.
 
 Weekly prefecture-level dataset of Japanese covid-19 situation (which contains some additional columns like hospital capacity not appear in `pref_daily`).
 
-Currently, only dataset after 2020-09-02 is available.
+- Currently, only dataset after 2020-09-02 is available.
 
 #### Columns
 
@@ -127,6 +127,7 @@ Currently, only dataset after 2020-09-02 is available.
 #### Data Source
 
 - Japanese MHLW website: https://www.mhlw.go.jp/stf/seisakunitsuite/newpage_00023.html
+- Because of the diffenrence in the reporting criteria, MHLW reports may not match reports from each prefecture.
 
 ### `pref`
 
