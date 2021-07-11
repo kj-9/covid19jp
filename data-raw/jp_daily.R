@@ -4,7 +4,7 @@ library(readr)
 load("data/pref.rda") # load pref dataset
 utils <- modules::use("data-raw/utils.R")
 
-base_url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/"
+base_url <- "https://toyokeizai.net/sp/visual/tko/covid19/csv/"
 files <- c(
   "pcr_tested_daily.csv",
   "pcr_positive_daily.csv",

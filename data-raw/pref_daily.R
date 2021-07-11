@@ -1,7 +1,7 @@
 library(dplyr)
 utils <- modules::use("data-raw/utils.R")
 
-url <- "https://github.com/kaz-ogiwara/covid19/raw/master/data/prefectures.csv"
+url <- "https://toyokeizai.net/sp/visual/tko/covid19/csv/prefectures.csv"
 pref_daily <- readr::read_csv(url, na = "-") %>%
   left_join(pref, by = c("prefectureNameJ" = "prefJP")) %>%
   transmute(
