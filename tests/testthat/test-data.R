@@ -2,7 +2,7 @@ library(pointblank)
 
 keep_num <- function(list) Filter(function(x) x == "numeric", list)
 
-test_that("testing japan_daily", {
+test_that("testing jp_daily", {
   schema <- col_schema(
     date = "Date",
     tests = "numeric",
