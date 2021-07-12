@@ -24,6 +24,7 @@ jp_daily <- map(
   )
 ) %>%
   reduce(full_join, by = "date") %>%
+  filter(across(everything(), ~ !is.na(.x))) %>%
   transmute(
     date = date,
     tests = pcr_tested_daily.csv,
