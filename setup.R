@@ -11,7 +11,7 @@ remotes::update_packages(c(
   "rJava",
   "tabulizer",
   "log4r",
-  "modules"
+  "box"
 ),
 upgrade = "always"
 )
