@@ -1,24 +1,33 @@
-write_files <- function(df, path) {
-  df_sym <- rlang::ensym(df)
+box::use(
+  readr[write_csv],
+  jsonlite[write_json],
+  log4r
+)
+
+
+#' @export
+write_files <- function(df, path_prefix) {
   paths <-
-    paste0(file.path(path, df_sym), c(".csv", ".json"))
+    paste0(path_prefix, c(".csv", ".json"))
 
-  readr::write_csv(df, paths[1])
-  jsonlite::write_json(df, paths[2])
+  write_csv(df, paths[1])
+  write_json(df, paths[2])
 }
 
+#' @export
 info <- function(message) {
-  logger <- log4r::logger()
-  log4r::info(logger, message)
+  logger <- log4r$logger()
+  log4r$info(logger, message)
 }
 
+#' @export
 warn <- function(message) {
-  logger <- log4r::logger()
-  log4r::warn(logger, message)
+  logger <- log4r$logger()
+  log4r$warn(logger, message)
 }
 
+#' @export
 error <- function(message) {
-  logger <- log4r::logger()
-  log4r::error(logger, message)
+  logger <- log4r$logger()
+  log4r$error(logger, message)
 }
-
