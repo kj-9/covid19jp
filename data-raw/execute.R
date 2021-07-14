@@ -1,10 +1,12 @@
-options(box.path = "data-raw")
-box::use(./jp_daily,
-         ./pref_daily,
-         ./pref_weekly,
-         ./utils[write_files],
+# set box.path option
+options(box.path = getwd())
+box::use(`data-raw`/jp_daily,
+         `data-raw`/pref_daily,
+         `data-raw`/pref_weekly,
+         `data-raw`/utils[write_files],
          purrr[map, walk2],
          usethis[use_data])
+
 
 jp_daily <- jp_daily$ingest()
 pref_daily <- pref_daily$ingest()
