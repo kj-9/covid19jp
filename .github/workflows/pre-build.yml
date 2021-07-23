@@ -45,9 +45,9 @@ jobs:
        
       - name: pre-build actions
         run: |
+          make test
           make data
           make document
-          make test
       - name: commit
         run: |
           MAKE_ENV=GITHUB_ACTIONS make ga-commit
