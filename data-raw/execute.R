@@ -7,7 +7,6 @@ box::use(`data-raw`/jp_daily,
          purrr[map, walk2],
          usethis[use_data])
 
-
 jp_daily <- jp_daily$ingest()
 pref_daily <- pref_daily$ingest()
 pref_weekly <- pref_weekly$ingest()
