@@ -1,3 +1,5 @@
+print("hello!")
+
 # set box.path option
 options(box.path = getwd())
 box::use(`data-raw`/jp_daily,
