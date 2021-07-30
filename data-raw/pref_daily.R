@@ -21,7 +21,7 @@ ingest <- function() {
       severeCases = serious,
       recovered = discharged,
       deaths = deaths,
-      rt = effectiveReproductionNumber
+      rt = as.numeric(effectiveReproductionNumber)
     ) %>%
     arrange(prefCode, date)
 }
