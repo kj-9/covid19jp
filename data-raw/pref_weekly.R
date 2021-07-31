@@ -36,7 +36,7 @@ get_list <- function() {
   url_chr <- res_nodes %>%
     purrr$map(rvest$html_nodes, "a") %>%
     purrr$map(rvest$html_attr, "href") %>% # to preserve zero length character
-    purrr$map_chr(~ ifelse(length(.x) == 0, NA, paste0(url_base, .x)))
+    purrr$map_chr( ~ ifelse(length(.x) == 0, NA, paste0(url_base, .x)))
 
   link_chr <- res_nodes %>%
     purrr$map_chr(rvest$html_text)
@@ -56,7 +56,7 @@ get_list <- function() {
   pos <- which(url_list$date == "2020-12-16") - 1
   stopifnot(length(pos) == 1)
 
-  url_list_after_20201223 <- url_list[seq_len(pos), ] %>%
+  url_list_after_20201223 <- url_list[seq_len(pos),] %>%
     mutate(
       file_name_cp = file_name,
       file_name = lag(file_name, 1),
@@ -66,7 +66,7 @@ get_list <- function() {
     select(-file_name_cp)
 
   out <-
-    rbind(url_list_after_20201223, url_list[-seq_len(pos), ]) %>%
+    rbind(url_list_after_20201223, url_list[-seq_len(pos),]) %>%
     # currently, this function only support data after 2020-09-02.
     filter(date >= "2020-09-02") %>%
     arrange(date)
@@ -95,7 +95,7 @@ extract_table <- function(url, date) {
   out <- df %>%
     .[[1]] %>%
     as_tibble() %>%
-    confirm_columns(1) %>%
+    confirm_columns(date) %>%
     confirm_rows()
 
   return(out)
@@ -104,26 +104,49 @@ extract_table <- function(url, date) {
 
 
 confirm_columns <- function(df, date) {
-  column_lst <-
-    list(
-      V1 = "prefectureNameJP",
-      V2 = "activeCases",
-      V3 = "hospitalizedCases",
-      V4 = "hospitalizedCasesPhases",
-      V5 = "hospitalizedCasesCap",
-      V7 = "hospitalizedCasesCapPlanned",
-      V8 = "severeCases",
-      V9 = "severeCasesPhases",
-      V10 = "severeCasesCap",
-      V12 = "severeCaseaCapPlanned",
-      V13 = "atHotelCases",
-      V14 = "atHotelCasesPhases",
-      V15 = "atHotelCasesCap",
-      V17 = "atHotelCasesCapPlanned",
-      V18 = "atHomeCases",
-      V19 = "atWelfareFacilityCases",
-      V20 = "unconfirmedCases"
-    )
+  if (date < "2021-06-02") {
+    column_lst <-
+      list(
+        V1 = "prefectureNameJP",
+        V2 = "activeCases",
+        V3 = "hospitalizedCases",
+        V4 = "hospitalizedCasesPhases",
+        V5 = "hospitalizedCasesCap",
+        V7 = "hospitalizedCasesCapPlanned",
+        V8 = "severeCases",
+        V9 = "severeCasesPhases",
+        V10 = "severeCasesCap",
+        V12 = "severeCaseaCapPlanned",
+        V13 = "atHotelCases",
+        V14 = "atHotelCasesPhases",
+        V15 = "atHotelCasesCap",
+        V17 = "atHotelCasesCapPlanned",
+        V18 = "atHomeCases",
+        V19 = "atWelfareFacilityCases",
+        V20 = "unconfirmedCases"
+      )
+  } else {
+    column_lst <-
+      list(
+        V1 = "prefectureNameJP",
+        V2 = "activeCases",
+        V3 = "hospitalizedCases",
+        V5 = "hospitalizedCasesPhases",
+        V6 = "hospitalizedCasesCap",
+        V7 = "hospitalizedCasesCapPlanned",
+        V10 = "severeCases",
+        V12 = "severeCasesPhases",
+        V13 = "severeCasesCap",
+        V14 = "severeCaseaCapPlanned",
+        V16 = "atHotelCases",
+        V17 = "atHotelCasesPhases",
+        V18 = "atHotelCasesCap",
+        V19 = "atHotelCasesCapPlanned",
+        V21 = "atHomeCases",
+        V22 = "atWelfareFacilityCases",
+        V23 = "unconfirmedCases"
+      )
+  }
 
   df <- df[names(column_lst)]
 
@@ -195,14 +218,17 @@ ingest <- function() {
 
   df <- url_list %>%
     mutate(data = purrr$map2(url, date,
-                            ~ extract_table(.x, .y) %>%
-                              clean())) %>%
+                             ~ extract_table(.x, .y) %>%
+                               clean())) %>%
     tidyr$unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
     select(prefCode,
            prefJP,
            prefEN,
-           everything(),-url,-file_name,-population) %>%
+           everything(),
+           -url,
+           -file_name,
+           -population) %>%
     arrange(prefCode, date)
 
 
