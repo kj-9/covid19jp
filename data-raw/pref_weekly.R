@@ -1,14 +1,16 @@
-box::use(dplyr[...],
-        purrr,
-        readr,
-        rvest,
-        stringr,
-        stringi,
-        tidyr,
-        xml2,
-        pointblank,
-        tabulizer,
-        ./utils)
+box::use(
+  dplyr[...],
+  purrr,
+  readr,
+  rvest,
+  stringr,
+  stringi,
+  tidyr,
+  xml2,
+  pointblank,
+  tabulizer,
+  ./utils
+)
 load("data/pref.rda") # load pref dataset
 
 #' split a string by "/" and parse as number
@@ -75,15 +77,67 @@ get_list <- function() {
 }
 
 
-extract_table <- function(url) {
+extract_table <- function(url, date) {
   utils$info(paste0("extracting table from: ", url))
 
-  df <- tabulizer$extract_tables(url, method = "lattice") %>%
-    .[[1]] %>%
-    as_tibble()
 
+  if (date == "2021-05-26") {
+    df <- tabulizer$extract_tables(url,
+                                   page = 1,
+                                   area = list(c(
+                                     71.31304, 172.56874, 642.47763, 1016.88051
+                                   )))
+
+  } else {
+    df <- tabulizer$extract_tables(url, method = "lattice")
+  }
+
+  out <- df %>%
+    .[[1]] %>%
+    as_tibble() %>%
+    confirm_columns(1) %>%
+    confirm_rows()
+
+  return(out)
+}
+
+
+
+confirm_columns <- function(df, date) {
+  column_lst <-
+    list(
+      V1 = "prefectureNameJP",
+      V2 = "activeCases",
+      V3 = "hospitalizedCases",
+      V4 = "hospitalizedCasesPhases",
+      V5 = "hospitalizedCasesCap",
+      V7 = "hospitalizedCasesCapPlanned",
+      V8 = "severeCases",
+      V9 = "severeCasesPhases",
+      V10 = "severeCasesCap",
+      V12 = "severeCaseaCapPlanned",
+      V13 = "atHotelCases",
+      V14 = "atHotelCasesPhases",
+      V15 = "atHotelCasesCap",
+      V17 = "atHotelCasesCapPlanned",
+      V18 = "atHomeCases",
+      V19 = "atWelfareFacilityCases",
+      V20 = "unconfirmedCases"
+    )
+
+  df <- df[names(column_lst)]
+
+  colnames(df) <- column_lst[colnames(df)]
   return(df)
 }
+
+confirm_rows <- function(df) {
+  df %>%
+    mutate(across(everything(), stringr$str_remove, "注[0-9]+")) %>%
+    mutate(prefectureNameJP = stringr$str_extract(prefectureNameJP, "\\p{Han}+")) %>%
+    filter(prefectureNameJP %in% pref$prefJP)
+}
+
 
 
 # 9月2日以降
@@ -92,45 +146,40 @@ clean <- function(df) {
   out <- df
 
 
-  tryCatch(
-    {
-      out <-
-        df %>%
-        mutate(across(everything(), stringr$str_remove, "注[0-9]+")) %>%
-        mutate(prefectureNameJP = stringr$str_extract(V1, "\\p{Han}+")) %>%
-        filter(prefectureNameJP %in% pref$prefJP) %>%
-        transmute(
-          prefJP = prefectureNameJP,
-          activeCases = readr$parse_number(V2),
-          hospitalizedCases = readr$parse_number(V3),
-          hospitalizedCasesPhase = split_slash(V4, 1),
-          hospitalizedCasesMaxPhase = split_slash(V4, 2),
-          hospitalizedCasesCap = readr$parse_number(V5),
-          hospitalizedCasesCapPlanned = readr$parse_number(V7),
-          hospitalizedCasesUTE = hospitalizedCases / hospitalizedCasesCap,
-          severeCases = readr$parse_number(V8),
-          severeCasesPhase = split_slash(V9, 1),
-          severeCasesMaxPhase = split_slash(V9, 2),
-          severeCasesCap = readr$parse_number(V10),
-          severeCaseaCapPlanned = readr$parse_number(V12),
-          severeCasesUTE = severeCases / severeCasesCap,
-          atHotelCases = readr$parse_number(V13),
-          atHotelCasesPhase = split_slash(V14, 1),
-          atHotelCasesMaxPhase = split_slash(V14, 2),
-          atHotelCasesCap = readr$parse_number(V15),
-          atHotelCasesCapPlanned = readr$parse_number(V17),
-          atHotelCasesUTE = atHotelCases / atHotelCasesCap,
-          atHomeCases = readr$parse_number(V18),
-          atWelfareFacilityCases = readr$parse_number(V19),
-          unconfirmedCases = readr$parse_number(V20)
-        )
+  tryCatch({
+    out <-
+      df %>%
+      transmute(
+        prefJP = prefectureNameJP,
+        activeCases = readr$parse_number(activeCases),
+        hospitalizedCases = readr$parse_number(hospitalizedCases),
+        hospitalizedCasesPhase = split_slash(hospitalizedCasesPhases, 1),
+        hospitalizedCasesMaxPhase = split_slash(hospitalizedCasesPhases, 2),
+        hospitalizedCasesCap = readr$parse_number(hospitalizedCasesCap),
+        hospitalizedCasesCapPlanned = readr$parse_number(hospitalizedCasesCapPlanned),
+        hospitalizedCasesUTE = hospitalizedCases / hospitalizedCasesCap,
+        severeCases = readr$parse_number(severeCases),
+        severeCasesPhase = split_slash(severeCasesPhases, 1),
+        severeCasesMaxPhase = split_slash(severeCasesPhases, 2),
+        severeCasesCap = readr$parse_number(severeCasesCap),
+        severeCaseaCapPlanned = readr$parse_number(severeCaseaCapPlanned),
+        severeCasesUTE = severeCases / severeCasesCap,
+        atHotelCases = readr$parse_number(atHotelCases),
+        atHotelCasesPhase = split_slash(atHotelCasesPhases, 1),
+        atHotelCasesMaxPhase = split_slash(atHotelCasesPhases, 2),
+        atHotelCasesCap = readr$parse_number(atHotelCasesCap),
+        atHotelCasesCapPlanned = readr$parse_number(atHotelCasesCapPlanned),
+        atHotelCasesUTE = atHotelCases / atHotelCasesCap,
+        atHomeCases = readr$parse_number(atHomeCases),
+        atWelfareFacilityCases = readr$parse_number(atWelfareFacilityCases),
+        unconfirmedCases = readr$parse_number(unconfirmedCases)
+      )
 
-      utils$info("cleaning succeeded.")
-    },
-    error = function(e) {
-      utils$error(paste0(e, "returning raw data."))
-    }
-  )
+    utils$info("cleaning succeeded.")
+  },
+  error = function(e) {
+    utils$error(paste0(e, "returning raw data."))
+  })
 
   return(out)
 }
@@ -145,17 +194,15 @@ ingest <- function() {
   url_list <- get_list()
 
   df <- url_list %>%
-    mutate(data = purrr$map(url, ~ .x %>%
-      extract_table() %>%
-      clean())) %>%
+    mutate(data = purrr$map2(url, date,
+                            ~ extract_table(.x, .y) %>%
+                              clean())) %>%
     tidyr$unnest(cols = c(data)) %>%
     left_join(pref, by = "prefJP") %>%
-    select(
-      prefCode,
-      prefJP,
-      prefEN,
-      everything(), -url, -file_name, -population
-    ) %>%
+    select(prefCode,
+           prefJP,
+           prefEN,
+           everything(),-url,-file_name,-population) %>%
     arrange(prefCode, date)
 
 
