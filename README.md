@@ -1,8 +1,6 @@
  <!-- badges: start -->
 
 [![R build status](https://github.com/kj-9/covid19jp/workflows/R-CMD-check/badge.svg)](https://github.com/kj-9/covid19jp/actions)
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/covid19jp)](https://cran.r-project.org/package=covid19jp)
-[![CRAN_Download_Badge](http://cranlogs.r-pkg.org/badges/grand-total/covid19jp)](https://cran.r-project.org/package=covid19jp)
 
 <!-- badges: end -->
 
@@ -21,23 +19,19 @@ This package provides ready to use Japanese covid-19 datasets.
 
 - Due to the data source format changes, updating datasets in development version might delay.
 
-## Installation
+## Installation and update
 
-We update datasets daily in devolpment repo. So if you install from CRAN, please run `update_date` to get latest datasets,
-
-```r
-# From CRAN
-install.packages("covid19jp")
-
-# update your datasets
-covid19jp::update_data()
-```
-
-or install from GitHub directly to get latest datasets,
-
+Install from this github repo. (currently, removed from CRAN)
 ```r
 # Install the development version from GitHub
 remotes::install_github("kj-9/covid19jp", ref = "master", upgrade = "never")
+```
+
+We update datasets. Please run `update_date` to get latest datasets,
+
+```r
+# update your datasets
+covid19jp::update_data()
 ```
 
 ## Dataset detail
