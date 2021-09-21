@@ -602,6 +602,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 01,北海道,Hokkaido,2021-09-17,1065911,59572,1325,20,56812,1465,0.71
 01,北海道,Hokkaido,2021-09-18,1069359,59649,1295,19,56925,1465,0.68
 01,北海道,Hokkaido,2021-09-19,1071693,59724,1259,19,57045,1465,0.7
+01,北海道,Hokkaido,2021-09-20,1072616,59774,1214,18,57152,1466,0.73
 02,青森県,Aomori,2020-01-26,NA,0,NA,NA,NA,NA,NA
 02,青森県,Aomori,2020-01-27,NA,0,NA,NA,NA,NA,NA
 02,青森県,Aomori,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -1205,6 +1206,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 02,青森県,Aomori,2021-09-17,81827,5347,411,9,4900,33,0.8
 02,青森県,Aomori,2021-09-18,NA,5423,455,7,4932,33,0.91
 02,青森県,Aomori,2021-09-19,NA,5438,451,7,4951,33,0.86
+02,青森県,Aomori,2021-09-20,NA,5469,446,6,4987,33,0.87
 03,岩手県,Iwate,2020-01-26,NA,0,NA,NA,NA,NA,NA
 03,岩手県,Iwate,2020-01-27,NA,0,NA,NA,NA,NA,NA
 03,岩手県,Iwate,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -1808,6 +1810,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 03,岩手県,Iwate,2021-09-17,116070,3442,129,1,3263,50,0.61
 03,岩手県,Iwate,2021-09-18,NA,3456,127,0,3278,51,0.6
 03,岩手県,Iwate,2021-09-19,NA,3463,106,0,3306,51,0.56
+03,岩手県,Iwate,2021-09-20,NA,3465,96,0,3318,51,0.57
 04,宮城県,Miyagi,2020-01-26,NA,0,NA,NA,NA,NA,NA
 04,宮城県,Miyagi,2020-01-27,NA,0,NA,NA,NA,NA,NA
 04,宮城県,Miyagi,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -2411,6 +2414,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 04,宮城県,Miyagi,2021-09-17,229654,15948,521,15,15281,109,0.81
 04,宮城県,Miyagi,2021-09-18,NA,15982,498,13,15333,111,0.76
 04,宮城県,Miyagi,2021-09-19,NA,16000,475,13,15388,113,0.76
+04,宮城県,Miyagi,2021-09-20,NA,16018,445,13,15432,113,0.73
 05,秋田県,Akita,2020-01-26,NA,0,NA,NA,NA,NA,NA
 05,秋田県,Akita,2020-01-27,NA,0,NA,NA,NA,NA,NA
 05,秋田県,Akita,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -3014,6 +3018,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 05,秋田県,Akita,2021-09-17,24856,1810,75,2,1709,26,0.87
 05,秋田県,Akita,2021-09-18,NA,1812,70,2,1716,26,0.79
 05,秋田県,Akita,2021-09-19,NA,1824,82,2,1716,26,0.67
+05,秋田県,Akita,2021-09-20,NA,1832,71,2,1735,26,0.71
 06,山形県,Yamagata,2020-01-26,NA,0,NA,NA,NA,NA,NA
 06,山形県,Yamagata,2020-01-27,NA,0,NA,NA,NA,NA,NA
 06,山形県,Yamagata,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -3617,6 +3622,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 06,山形県,Yamagata,2021-09-17,91633,3460,146,3,3253,55,0.68
 06,山形県,Yamagata,2021-09-18,NA,3463,123,3,3279,55,0.61
 06,山形県,Yamagata,2021-09-19,NA,3464,102,3,3300,56,0.47
+06,山形県,Yamagata,2021-09-20,NA,3467,96,3,3309,56,0.47
 07,福島県,Fukushima,2020-01-26,NA,0,NA,NA,NA,NA,NA
 07,福島県,Fukushima,2020-01-27,NA,0,NA,NA,NA,NA,NA
 07,福島県,Fukushima,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -4220,6 +4226,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 07,福島県,Fukushima,2021-09-17,390932,9341,264,6,8903,173,0.7
 07,福島県,Fukushima,2021-09-18,NA,9357,244,6,8939,173,0.66
 07,福島県,Fukushima,2021-09-19,NA,9369,211,6,8983,174,0.62
+07,福島県,Fukushima,2021-09-20,NA,9376,199,6,9002,174,0.56
 08,茨城県,Ibaraki,2020-01-26,NA,0,NA,NA,NA,NA,NA
 08,茨城県,Ibaraki,2020-01-27,NA,0,NA,NA,NA,NA,NA
 08,茨城県,Ibaraki,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -4823,6 +4830,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 08,茨城県,Ibaraki,2021-09-17,38857,23526,985,22,22318,209,0.71
 08,茨城県,Ibaraki,2021-09-18,NA,23631,931,20,22476,210,0.73
 08,茨城県,Ibaraki,2021-09-19,NA,23722,882,19,22614,212,0.76
+08,茨城県,Ibaraki,2021-09-20,NA,23785,837,19,22722,212,0.74
 09,栃木県,Tochigi,2020-01-26,NA,0,NA,NA,NA,NA,NA
 09,栃木県,Tochigi,2020-01-27,NA,0,NA,NA,NA,NA,NA
 09,栃木県,Tochigi,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -5426,6 +5434,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 09,栃木県,Tochigi,2021-09-17,468332,14837,658,14,14062,107,0.76
 09,栃木県,Tochigi,2021-09-18,NA,14890,635,14,14137,108,0.74
 09,栃木県,Tochigi,2021-09-19,NA,14920,580,14,14222,108,0.73
+09,栃木県,Tochigi,2021-09-20,NA,14947,551,13,14277,109,0.74
 10,群馬県,Gumma,2020-01-26,NA,0,NA,NA,NA,NA,NA
 10,群馬県,Gumma,2020-01-27,NA,0,NA,NA,NA,NA,NA
 10,群馬県,Gumma,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -6029,6 +6038,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 10,群馬県,Gumma,2021-09-17,279287,16369,475,16,15636,168,0.59
 10,群馬県,Gumma,2021-09-18,NA,16396,383,16,15754,168,0.58
 10,群馬県,Gumma,2021-09-19,NA,16430,365,16,15806,168,0.59
+10,群馬県,Gumma,2021-09-20,NA,16448,348,16,15840,169,0.61
 11,埼玉県,Saitama,2020-01-26,NA,0,NA,NA,NA,NA,NA
 11,埼玉県,Saitama,2020-01-27,NA,0,NA,NA,NA,NA,NA
 11,埼玉県,Saitama,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -6632,6 +6642,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 11,埼玉県,Saitama,2021-09-17,1391329,112658,5826,103,105777,970,0.73
 11,埼玉県,Saitama,2021-09-18,NA,112920,5478,96,106386,971,0.68
 11,埼玉県,Saitama,2021-09-19,NA,113144,5169,95,106918,972,0.66
+11,埼玉県,Saitama,2021-09-20,NA,113299,4689,92,107550,975,0.66
 12,千葉県,Chiba,2020-01-26,NA,0,NA,NA,NA,NA,NA
 12,千葉県,Chiba,2020-01-27,NA,0,NA,NA,NA,NA,NA
 12,千葉県,Chiba,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -7235,6 +7246,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 12,千葉県,Chiba,2021-09-17,1013220,97880,5364,70,91317,963,0.56
 12,千葉県,Chiba,2021-09-18,NA,98100,4467,64,92455,966,0.59
 12,千葉県,Chiba,2021-09-19,NA,98313,3743,61,93396,968,0.62
+12,千葉県,Chiba,2021-09-20,NA,98470,3607,65,93737,974,0.64
 13,東京都,Tokyo,2020-01-26,NA,2,NA,NA,NA,NA,NA
 13,東京都,Tokyo,2020-01-27,NA,2,NA,NA,NA,NA,NA
 13,東京都,Tokyo,2020-01-28,NA,2,NA,NA,NA,NA,NA
@@ -7838,6 +7850,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 13,東京都,Tokyo,2021-09-17,3508121,370563,10914,179,356888,2761,0.67
 13,東京都,Tokyo,2021-09-18,NA,371425,10141,177,358503,2781,0.69
 13,東京都,Tokyo,2021-09-19,NA,371990,9415,171,359778,2797,0.69
+13,東京都,Tokyo,2021-09-20,NA,372292,8629,169,360862,2801,0.68
 14,神奈川県,Kanagawa,2020-01-26,NA,0,NA,NA,NA,NA,NA
 14,神奈川県,Kanagawa,2020-01-27,NA,0,NA,NA,NA,NA,NA
 14,神奈川県,Kanagawa,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -8441,6 +8454,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 14,神奈川県,Kanagawa,2021-09-17,1523796,164736,5454,129,158055,1213,0.66
 14,神奈川県,Kanagawa,2021-09-18,NA,165189,5003,125,158955,1217,0.67
 14,神奈川県,Kanagawa,2021-09-19,NA,165583,4487,121,159857,1224,0.67
+14,神奈川県,Kanagawa,2021-09-20,NA,165840,3998,119,160603,1224,0.67
 15,新潟県,Niigata,2020-01-26,NA,0,NA,NA,NA,NA,NA
 15,新潟県,Niigata,2020-01-27,NA,0,NA,NA,NA,NA,NA
 15,新潟県,Niigata,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -9044,6 +9058,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 15,新潟県,Niigata,2021-09-17,267889,7550,388,8,7092,58,0.71
 15,新潟県,Niigata,2021-09-18,NA,7594,401,8,7123,58,0.7
 15,新潟県,Niigata,2021-09-19,NA,7621,382,8,7169,58,0.75
+15,新潟県,Niigata,2021-09-20,NA,7638,348,8,7220,58,0.8
 16,富山県,Toyama,2020-01-26,NA,0,NA,NA,NA,NA,NA
 16,富山県,Toyama,2020-01-27,NA,0,NA,NA,NA,NA,NA
 16,富山県,Toyama,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -9647,6 +9662,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 16,富山県,Toyama,2021-09-17,108900,4733,128,7,4547,48,0.56
 16,富山県,Toyama,2021-09-18,NA,4742,121,7,4563,48,0.55
 16,富山県,Toyama,2021-09-19,NA,4751,116,7,4577,48,0.63
+16,富山県,Toyama,2021-09-20,NA,4758,114,7,4586,48,0.74
 17,石川県,Ishikawa,2020-01-26,NA,0,NA,NA,NA,NA,NA
 17,石川県,Ishikawa,2020-01-27,NA,0,NA,NA,NA,NA,NA
 17,石川県,Ishikawa,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -10250,6 +10266,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 17,石川県,Ishikawa,2021-09-17,182066,7713,237,2,7326,123,0.96
 17,石川県,Ishikawa,2021-09-18,NA,7732,239,2,7343,123,0.85
 17,石川県,Ishikawa,2021-09-19,NA,7745,230,3,7365,123,0.81
+17,石川県,Ishikawa,2021-09-20,NA,7759,198,3,7411,123,0.81
 18,福井県,Fukui,2020-01-26,NA,0,NA,NA,NA,NA,NA
 18,福井県,Fukui,2020-01-27,NA,0,NA,NA,NA,NA,NA
 18,福井県,Fukui,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -10853,6 +10870,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 18,福井県,Fukui,2021-09-17,109509,2917,140,0,2740,36,0.73
 18,福井県,Fukui,2021-09-18,NA,2929,137,0,2755,36,0.72
 18,福井県,Fukui,2021-09-19,NA,2936,129,0,2770,36,0.65
+18,福井県,Fukui,2021-09-20,NA,2945,124,0,2784,36,0.67
 19,山梨県,Yamanashi,2020-01-26,NA,0,NA,NA,NA,NA,NA
 19,山梨県,Yamanashi,2020-01-27,NA,0,NA,NA,NA,NA,NA
 19,山梨県,Yamanashi,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -11456,6 +11474,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 19,山梨県,Yamanashi,2021-09-17,105725,4975,190,1,4739,29,0.59
 19,山梨県,Yamanashi,2021-09-18,NA,4986,190,1,4739,29,0.66
 19,山梨県,Yamanashi,2021-09-19,NA,4990,190,1,4739,29,0.56
+19,山梨県,Yamanashi,2021-09-20,NA,5002,190,1,4739,29,0.56
 20,長野県,Nagano,2020-01-26,NA,0,NA,NA,NA,NA,NA
 20,長野県,Nagano,2020-01-27,NA,0,NA,NA,NA,NA,NA
 20,長野県,Nagano,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -12059,6 +12078,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 20,長野県,Nagano,2021-09-17,296794,8561,273,1,8234,95,0.99
 20,長野県,Nagano,2021-09-18,NA,8586,273,1,8268,95,1.04
 20,長野県,Nagano,2021-09-19,NA,8612,275,1,8287,95,1.02
+20,長野県,Nagano,2021-09-20,NA,8620,268,1,8308,95,0.94
 21,岐阜県,Gifu,2020-01-26,NA,0,NA,NA,NA,NA,NA
 21,岐阜県,Gifu,2020-01-27,NA,0,NA,NA,NA,NA,NA
 21,岐阜県,Gifu,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -12662,6 +12682,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 21,岐阜県,Gifu,2021-09-17,384669,17884,860,13,17275,208,0.62
 21,岐阜県,Gifu,2021-09-18,NA,17954,787,14,17421,208,0.57
 21,岐阜県,Gifu,2021-09-19,NA,17987,716,14,17564,208,0.58
+21,岐阜県,Gifu,2021-09-20,NA,18030,657,13,17657,208,0.62
 22,静岡県,Shizuoka,2020-01-26,NA,0,NA,NA,NA,NA,NA
 22,静岡県,Shizuoka,2020-01-27,NA,0,NA,NA,NA,NA,NA
 22,静岡県,Shizuoka,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -13265,6 +13286,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 22,静岡県,Shizuoka,2021-09-17,586213,26124,1382,12,24492,197,0.67
 22,静岡県,Shizuoka,2021-09-18,NA,26221,1316,12,24650,197,0.71
 22,静岡県,Shizuoka,2021-09-19,NA,26274,1250,12,24771,197,0.71
+22,静岡県,Shizuoka,2021-09-20,NA,26303,1213,10,24848,200,0.72
 23,愛知県,Aichi,2020-01-26,NA,1,NA,NA,NA,NA,NA
 23,愛知県,Aichi,2020-01-27,NA,1,NA,NA,NA,NA,NA
 23,愛知県,Aichi,2020-01-28,NA,2,NA,NA,NA,NA,NA
@@ -13868,6 +13890,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 23,愛知県,Aichi,2021-09-17,1211715,102936,11803,78,89182,1090,0.64
 23,愛知県,Aichi,2021-09-18,NA,103309,11212,69,90347,1095,0.62
 23,愛知県,Aichi,2021-09-19,NA,103586,10139,68,91785,1101,0.58
+23,愛知県,Aichi,2021-09-20,NA,103769,9220,67,92977,1104,0.57
 24,三重県,Mie,2020-01-26,NA,0,NA,NA,NA,NA,NA
 24,三重県,Mie,2020-01-27,NA,0,NA,NA,NA,NA,NA
 24,三重県,Mie,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -14471,6 +14494,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 24,三重県,Mie,2021-09-17,209444,14363,1237,18,13291,151,0.56
 24,三重県,Mie,2021-09-18,NA,14406,1001,17,13569,152,0.55
 24,三重県,Mie,2021-09-19,NA,14437,893,12,13705,155,0.55
+24,三重県,Mie,2021-09-20,NA,14461,685,12,13939,155,0.58
 25,滋賀県,Shiga,2020-01-26,NA,0,NA,NA,NA,NA,NA
 25,滋賀県,Shiga,2020-01-27,NA,0,NA,NA,NA,NA,NA
 25,滋賀県,Shiga,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -15074,6 +15098,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 25,滋賀県,Shiga,2021-09-17,236165,11998,550,5,11325,98,0.68
 25,滋賀県,Shiga,2021-09-18,NA,12028,483,5,11422,98,0.65
 25,滋賀県,Shiga,2021-09-19,NA,12050,434,5,11493,98,0.69
+25,滋賀県,Shiga,2021-09-20,NA,12062,402,6,11536,99,0.72
 26,京都府,Kyoto,2020-01-26,NA,0,NA,NA,NA,NA,NA
 26,京都府,Kyoto,2020-01-27,NA,0,NA,NA,NA,NA,NA
 26,京都府,Kyoto,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -15677,6 +15702,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 26,京都府,Kyoto,2021-09-17,401358,34797,3131,56,31260,260,0.61
 26,京都府,Kyoto,2021-09-18,NA,34905,2932,57,31579,260,0.61
 26,京都府,Kyoto,2021-09-19,NA,34978,2691,52,31928,260,0.59
+26,京都府,Kyoto,2021-09-20,NA,35025,2534,49,32158,260,0.6
 27,大阪府,Osaka,2020-01-26,1,0,NA,NA,NA,NA,NA
 27,大阪府,Osaka,2020-01-27,2,0,NA,NA,NA,NA,NA
 27,大阪府,Osaka,2020-01-28,3,0,NA,NA,NA,NA,NA
@@ -16280,6 +16306,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 27,大阪府,Osaka,2021-09-17,3229418,194641,12749,494,177040,2905,0.67
 27,大阪府,Osaka,2021-09-18,3246325,195307,11538,491,178910,2914,0.67
 27,大阪府,Osaka,2021-09-19,3259821,195774,10615,482,180305,2917,0.64
+27,大阪府,Osaka,2021-09-20,3266904,196042,9903,478,181282,2918,0.65
 28,兵庫県,Hyogo,2020-01-26,NA,0,NA,NA,NA,NA,NA
 28,兵庫県,Hyogo,2020-01-27,NA,0,NA,NA,NA,NA,NA
 28,兵庫県,Hyogo,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -16883,6 +16910,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 28,兵庫県,Hyogo,2021-09-17,706884,75241,664,64,70231,1374,0.66
 28,兵庫県,Hyogo,2021-09-18,709687,75545,656,60,70883,1376,0.64
 28,兵庫県,Hyogo,2021-09-19,711847,75732,651,60,71331,1378,0.63
+28,兵庫県,Hyogo,2021-09-20,713115,75849,618,60,71687,1378,0.63
 29,奈良県,Nara,2020-01-26,NA,0,NA,NA,NA,NA,NA
 29,奈良県,Nara,2020-01-27,NA,0,NA,NA,NA,NA,NA
 29,奈良県,Nara,2020-01-28,NA,1,NA,NA,NA,NA,NA
@@ -17486,6 +17514,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 29,奈良県,Nara,2021-09-17,237186,15035,719,14,14458,144,0.66
 29,奈良県,Nara,2021-09-18,NA,15074,645,13,14571,144,0.65
 29,奈良県,Nara,2021-09-19,NA,15096,606,15,14632,145,0.66
+29,奈良県,Nara,2021-09-20,NA,15118,567,13,14694,145,0.69
 30,和歌山県,Wakayama,2020-01-26,NA,0,NA,NA,NA,NA,NA
 30,和歌山県,Wakayama,2020-01-27,NA,0,NA,NA,NA,NA,NA
 30,和歌山県,Wakayama,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -18089,6 +18118,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 30,和歌山県,Wakayama,2021-09-17,62418,5135,143,12,4826,59,0.55
 30,和歌山県,Wakayama,2021-09-18,NA,5142,133,10,4843,59,0.6
 30,和歌山県,Wakayama,2021-09-19,NA,5152,127,9,4859,59,0.65
+30,和歌山県,Wakayama,2021-09-20,NA,5159,123,6,4870,59,0.69
 31,鳥取県,Tottori,2020-01-26,NA,0,NA,NA,NA,NA,NA
 31,鳥取県,Tottori,2020-01-27,NA,0,NA,NA,NA,NA,NA
 31,鳥取県,Tottori,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -18692,6 +18722,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 31,鳥取県,Tottori,2021-09-17,139203,1631,91,1,1507,5,0.73
 31,鳥取県,Tottori,2021-09-18,NA,1634,86,1,1515,5,0.64
 31,鳥取県,Tottori,2021-09-19,NA,1634,79,1,1525,5,0.66
+31,鳥取県,Tottori,2021-09-20,NA,1635,73,1,1531,5,0.7
 32,島根県,Shimane,2020-01-26,NA,0,NA,NA,NA,NA,NA
 32,島根県,Shimane,2020-01-27,NA,0,NA,NA,NA,NA,NA
 32,島根県,Shimane,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -19295,6 +19326,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 32,島根県,Shimane,2021-09-17,50282,1547,68,1,1470,2,0.58
 32,島根県,Shimane,2021-09-18,NA,1551,59,1,1483,2,0.61
 32,島根県,Shimane,2021-09-19,NA,1553,56,1,1488,2,0.46
+32,島根県,Shimane,2021-09-20,NA,1559,47,1,1503,2,0.53
 33,岡山県,Okayama,2020-01-26,NA,0,NA,NA,NA,NA,NA
 33,岡山県,Okayama,2020-01-27,NA,0,NA,NA,NA,NA,NA
 33,岡山県,Okayama,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -19898,6 +19930,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 33,岡山県,Okayama,2021-09-17,249075,14911,615,13,14091,135,0.55
 33,岡山県,Okayama,2021-09-18,NA,14948,615,13,14091,135,0.6
 33,岡山県,Okayama,2021-09-19,NA,14969,615,13,14091,135,0.58
+33,岡山県,Okayama,2021-09-20,NA,14978,615,13,14091,135,0.6
 34,広島県,Hiroshima,2020-01-26,NA,0,NA,NA,NA,NA,NA
 34,広島県,Hiroshima,2020-01-27,NA,0,NA,NA,NA,NA,NA
 34,広島県,Hiroshima,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -20501,6 +20534,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 34,広島県,Hiroshima,2021-09-17,838194,21129,605,11,19649,190,0.64
 34,広島県,Hiroshima,2021-09-18,NA,21177,524,11,20054,191,0.65
 34,広島県,Hiroshima,2021-09-19,NA,21234,496,11,20144,191,0.64
+34,広島県,Hiroshima,2021-09-20,NA,21265,496,11,20144,191,0.66
 35,山口県,Yamaguchi,2020-01-26,NA,0,NA,NA,NA,NA,NA
 35,山口県,Yamaguchi,2020-01-27,NA,0,NA,NA,NA,NA,NA
 35,山口県,Yamaguchi,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -21104,6 +21138,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 35,山口県,Yamaguchi,2021-09-17,173420,5478,182,1,5206,88,0.52
 35,山口県,Yamaguchi,2021-09-18,NA,5491,159,1,5242,88,0.54
 35,山口県,Yamaguchi,2021-09-19,NA,5502,146,1,5266,88,0.61
+35,山口県,Yamaguchi,2021-09-20,NA,5509,133,1,5286,88,0.63
 36,徳島県,Tokushima,2020-01-26,NA,0,NA,NA,NA,NA,NA
 36,徳島県,Tokushima,2020-01-27,NA,0,NA,NA,NA,NA,NA
 36,徳島県,Tokushima,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -21707,6 +21742,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 36,徳島県,Tokushima,2021-09-17,98341,3173,203,2,2906,64,0.67
 36,徳島県,Tokushima,2021-09-18,NA,3182,191,2,2927,64,0.59
 36,徳島県,Tokushima,2021-09-19,NA,3189,169,2,2956,64,0.52
+36,徳島県,Tokushima,2021-09-20,NA,3198,149,2,2985,64,0.53
 37,香川県,Kagawa,2020-01-26,NA,0,NA,NA,NA,NA,NA
 37,香川県,Kagawa,2020-01-27,NA,0,NA,NA,NA,NA,NA
 37,香川県,Kagawa,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -22310,6 +22346,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 37,香川県,Kagawa,2021-09-17,123133,4620,122,3,4462,35,0.54
 37,香川県,Kagawa,2021-09-18,NA,4634,118,4,4479,36,0.63
 37,香川県,Kagawa,2021-09-19,NA,4638,104,4,4497,36,0.68
+37,香川県,Kagawa,2021-09-20,NA,4643,99,4,4507,36,0.73
 38,愛媛県,Ehime,2020-01-26,NA,0,NA,NA,NA,NA,NA
 38,愛媛県,Ehime,2020-01-27,NA,0,NA,NA,NA,NA,NA
 38,愛媛県,Ehime,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -22913,6 +22950,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 38,愛媛県,Ehime,2021-09-17,142550,5002,148,5,4767,81,0.63
 38,愛媛県,Ehime,2021-09-18,NA,5019,143,5,4789,81,0.6
 38,愛媛県,Ehime,2021-09-19,NA,5030,124,4,4819,81,0.68
+38,愛媛県,Ehime,2021-09-20,NA,5034,117,4,4830,81,0.67
 39,高知県,Kochi,2020-01-26,NA,0,NA,NA,NA,NA,NA
 39,高知県,Kochi,2020-01-27,NA,0,NA,NA,NA,NA,NA
 39,高知県,Kochi,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -23516,6 +23554,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 39,高知県,Kochi,2021-09-17,89967,4025,162,3,3828,31,0.45
 39,高知県,Kochi,2021-09-18,NA,4033,129,1,3869,31,0.39
 39,高知県,Kochi,2021-09-19,NA,4037,109,1,3893,31,0.37
+39,高知県,Kochi,2021-09-20,NA,4046,96,1,3915,31,0.39
 40,福岡県,Fukuoka,2020-01-26,NA,0,NA,NA,NA,NA,NA
 40,福岡県,Fukuoka,2020-01-27,NA,0,NA,NA,NA,NA,NA
 40,福岡県,Fukuoka,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -24119,6 +24158,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 40,福岡県,Fukuoka,2021-09-17,1190025,72848,5301,32,66739,594,0.59
 40,福岡県,Fukuoka,2021-09-18,NA,73013,4982,30,67217,595,0.57
 40,福岡県,Fukuoka,2021-09-19,NA,73146,4836,28,67527,595,0.56
+40,福岡県,Fukuoka,2021-09-20,NA,73221,4587,27,67909,595,0.57
 41,佐賀県,Saga,2020-01-26,NA,0,NA,NA,NA,NA,NA
 41,佐賀県,Saga,2020-01-27,NA,0,NA,NA,NA,NA,NA
 41,佐賀県,Saga,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -24722,6 +24762,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 41,佐賀県,Saga,2021-09-17,96029,5654,167,1,5498,29,0.56
 41,佐賀県,Saga,2021-09-18,NA,5661,133,1,5541,29,0.54
 41,佐賀県,Saga,2021-09-19,NA,5665,118,1,5561,29,0.55
+41,佐賀県,Saga,2021-09-20,NA,5670,105,1,5575,29,0.54
 42,長崎県,Nagasaki,2020-01-26,NA,0,NA,NA,NA,NA,NA
 42,長崎県,Nagasaki,2020-01-27,NA,0,NA,NA,NA,NA,NA
 42,長崎県,Nagasaki,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -25325,6 +25366,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 42,長崎県,Nagasaki,2021-09-17,170090,5861,231,2,5560,71,0.67
 42,長崎県,Nagasaki,2021-09-18,NA,5875,222,2,5583,71,0.67
 42,長崎県,Nagasaki,2021-09-19,NA,5880,183,2,5627,71,0.6
+42,長崎県,Nagasaki,2021-09-20,NA,5896,187,2,5639,71,0.65
 43,熊本県,Kumamoto,2020-01-26,NA,0,NA,NA,NA,NA,NA
 43,熊本県,Kumamoto,2020-01-27,NA,0,NA,NA,NA,NA,NA
 43,熊本県,Kumamoto,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -25928,6 +25970,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 43,熊本県,Kumamoto,2021-09-17,117954,13991,536,14,13303,131,0.55
 43,熊本県,Kumamoto,2021-09-18,NA,14056,497,12,13407,131,0.58
 43,熊本県,Kumamoto,2021-09-19,NA,14086,466,11,13468,131,0.61
+43,熊本県,Kumamoto,2021-09-20,NA,14107,467,10,13488,131,0.66
 44,大分県,Oita,2020-01-26,NA,0,NA,NA,NA,NA,NA
 44,大分県,Oita,2020-01-27,NA,0,NA,NA,NA,NA,NA
 44,大分県,Oita,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -26531,6 +26574,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 44,大分県,Oita,2021-09-17,247301,7886,288,3,7518,75,0.61
 44,大分県,Oita,2021-09-18,NA,7910,270,3,7558,77,0.65
 44,大分県,Oita,2021-09-19,NA,7929,249,3,7598,77,0.65
+44,大分県,Oita,2021-09-20,NA,7943,228,3,7633,77,0.66
 45,宮崎県,Miyazaki,2020-01-26,NA,0,NA,NA,NA,NA,NA
 45,宮崎県,Miyazaki,2020-01-27,NA,0,NA,NA,NA,NA,NA
 45,宮崎県,Miyazaki,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -27134,6 +27178,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 45,宮崎県,Miyazaki,2021-09-17,71159,6034,268,6,5725,39,0.63
 45,宮崎県,Miyazaki,2021-09-18,NA,6046,233,6,5725,39,0.66
 45,宮崎県,Miyazaki,2021-09-19,NA,6058,215,6,5725,39,0.69
+45,宮崎県,Miyazaki,2021-09-20,NA,6064,213,6,5725,39,0.64
 46,鹿児島県,Kagoshima,2020-01-26,NA,0,NA,NA,NA,NA,NA
 46,鹿児島県,Kagoshima,2020-01-27,NA,0,NA,NA,NA,NA,NA
 46,鹿児島県,Kagoshima,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -27737,6 +27782,7 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 46,鹿児島県,Kagoshima,2021-09-17,162461,8984,418,4,8541,61,0.68
 46,鹿児島県,Kagoshima,2021-09-18,NA,8999,363,5,8621,61,0.64
 46,鹿児島県,Kagoshima,2021-09-19,NA,9014,318,5,8681,62,0.61
+46,鹿児島県,Kagoshima,2021-09-20,NA,9018,291,5,8723,63,0.59
 47,沖縄県,Okinawa,2020-01-26,NA,0,NA,NA,NA,NA,NA
 47,沖縄県,Okinawa,2020-01-27,NA,0,NA,NA,NA,NA,NA
 47,沖縄県,Okinawa,2020-01-28,NA,0,NA,NA,NA,NA,NA
@@ -28340,3 +28386,4 @@ prefCode,prefJP,prefEN,date,tests,newCases,activeCases,severeCases,recovered,dea
 47,沖縄県,Okinawa,2021-09-17,374589,48474,3999,77,43611,282,0.73
 47,沖縄県,Okinawa,2021-09-18,NA,48650,3580,65,44300,286,0.77
 47,沖縄県,Okinawa,2021-09-19,NA,48757,2939,64,45095,286,0.73
+47,沖縄県,Okinawa,2021-09-20,NA,48837,2466,62,45655,290,0.71
