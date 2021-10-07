@@ -5,7 +5,7 @@
 \alias{jp_daily}
 \title{Daily nation-level dataset of Japanese covid-19 situation}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 629 rows and 8 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 630 rows and 8 columns.
 }
 \usage{
 jp_daily
