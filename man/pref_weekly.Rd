@@ -5,7 +5,7 @@
 \alias{pref_weekly}
 \title{Weekly prefecture-level dataset of Japanese covid-19 situation}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3337 rows and 26 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3384 rows and 26 columns.
 }
 \usage{
 pref_weekly
