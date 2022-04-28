@@ -5,7 +5,7 @@
 \alias{pref_daily}
 \title{Daily prefecture-level dataset of Japanese covid-19 situation}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 38634 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 38681 rows and 11 columns.
 }
 \usage{
 pref_daily
